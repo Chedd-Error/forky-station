@@ -2,7 +2,7 @@
   parent: BaseDeltaPressureGlass
   id: InflatableWall
   name: inflatable barricade
-  suffix: Depreciated
+  suffix: Depreciated # Funky change, new inflatables
   description: An inflated membrane. Activate to deflate. Do not puncture.
   components:
   - type: Clickable
@@ -45,7 +45,7 @@
 - type: entity
   id: InflatableDoor
   name: inflatable door
-  suffix: Depreciated
+  suffix: Depreciated # Funky change, new inflatables
   parent: [BaseMaterialDoor, BaseDeltaPressureGlass]
   description: An inflated membrane. Activate to deflate. Now with a door. Do not puncture.
   components:

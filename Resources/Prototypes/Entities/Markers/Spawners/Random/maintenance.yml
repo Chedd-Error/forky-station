@@ -237,6 +237,7 @@
       - id: ClothingMaskBreath
       - id: DoorElectronics
       - id: APCElectronics
+      # - id: InflatableWallStack5 # Funky change, new inflatables
       - id: FunkyInflatableWallStack # Funky Change
       - id: FunkyInflatableDoorStack1 # Funky Change
       - id: FunkyInflatableFloorStack # Funky Change
