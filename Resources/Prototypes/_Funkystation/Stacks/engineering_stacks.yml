@@ -1,0 +1,17 @@
+- type: stack
+  id: FunkyInflatableWall
+  name: inflatable wall
+  spawn: FunkyInflatableWallStack1
+  maxCount: 5
+
+- type: stack
+  id: FunkyInflatableDoor
+  name: inflatable door
+  spawn: FunkyInflatableDoorStack1
+  maxCount: 5
+
+- type: stack
+  id: FunkyInflatableFloor
+  name: inflatable floor
+  spawn: FunkyInflatableFloorStack1
+  maxCount: 8
