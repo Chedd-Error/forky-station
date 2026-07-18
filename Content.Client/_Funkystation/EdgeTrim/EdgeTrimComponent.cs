@@ -33,13 +33,13 @@ namespace Content.Client._FunkyStation.EdgeTrim
         /// <summary>
         ///     Additional keys to smooth with.
         /// </summary>
-        [DataField]
+        [DataField("addSmoothKeys")]
         public List<string> AdditionalKeys = new();
 
         /// <summary>
         ///     Keys to place an edge against
         /// </summary>
-        [DataField]
+        [DataField("edgeKeys")]
         public List<string> EdgeKeys = new();
 
         /// <summary>

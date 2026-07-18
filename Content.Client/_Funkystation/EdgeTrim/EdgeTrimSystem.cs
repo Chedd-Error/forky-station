@@ -176,10 +176,10 @@ namespace Content.Client._FunkyStation.EdgeTrim
             // It will also result in 4-8 sprite update events being raised when it only needs to be 1-2.
             // At the very least each event currently only queues a sprite for updating.
             // Could definitely be better, the sprite component is certainly interesting.
-            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.NE, $"{smooth.StateBase}-{_trimLookup[cornerSE]}");
-            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.SE, $"{smooth.StateBase}-{_trimLookup[cornerNE]}");
-            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.SW, $"{smooth.StateBase}-{_trimLookup[cornerNW]}");
-            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.NW, $"{smooth.StateBase}-{_trimLookup[cornerSW]}");
+            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.SE, $"{smooth.StateBase}-{_trimLookup[cornerSE]}");
+            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.NE, $"{smooth.StateBase}-{_trimLookup[cornerNE]}");
+            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.NW, $"{smooth.StateBase}-{_trimLookup[cornerNW]}");
+            _sprite.LayerSetRsiState(spriteEnt.AsNullable(), CornerLayers.SW, $"{smooth.StateBase}-{_trimLookup[cornerSW]}");
         }
 
         private int TrimEntity(EdgeTrimComponent smooth, AnchoredEntitiesEnumerator candidates)
@@ -194,7 +194,7 @@ namespace Content.Client._FunkyStation.EdgeTrim
                         return 1; // Smooths to
                     }
 
-                    else if (smooth.EdgeKeys.Contains(other.SmoothKey))
+                    if (smooth.EdgeKeys.Contains(other.SmoothKey))
                     {
                         return 2; // Trims against
                     }
