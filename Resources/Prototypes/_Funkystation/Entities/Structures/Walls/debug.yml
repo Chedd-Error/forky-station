@@ -8,9 +8,9 @@
     tags:
       - Wall
   - type: Sprite
-    sprite: _Funkystation/Debug/edgetrim.rsi
+    sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
   - type: Icon
-    sprite: _Funkystation/Debug/edgetrim.rsi
+    sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -40,9 +40,9 @@
     tags:
       - Wall
   - type: Sprite
-    sprite: _Funkystation/Debug/edgetrim.rsi
+    sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
   - type: Icon
-    sprite: _Funkystation/Debug/edgetrim.rsi
+    sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -72,9 +72,9 @@
     tags:
       - Wall
   - type: Sprite
-    sprite: _Funkystation/Debug/trimless.rsi
+    sprite: _Funkystation/Structures/Walls/test/trimless.rsi
   - type: Icon
-    sprite: _Funkystation/Debug/trimless.rsi
+    sprite: _Funkystation/Structures/Walls/test/trimless.rsi
   - type: Destructible
     thresholds:
     - trigger:
