@@ -11,6 +11,7 @@
     sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
   - type: Icon
     sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
+    state: icon
   - type: Destructible
     thresholds:
     - trigger:
@@ -43,6 +44,7 @@
     sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
   - type: Icon
     sprite: _Funkystation/Structures/Walls/test/edgetrim.rsi
+    state: icon
   - type: Destructible
     thresholds:
     - trigger:
@@ -75,6 +77,7 @@
     sprite: _Funkystation/Structures/Walls/test/trimless.rsi
   - type: Icon
     sprite: _Funkystation/Structures/Walls/test/trimless.rsi
+    state: icon
   - type: Destructible
     thresholds:
     - trigger:
@@ -108,6 +111,7 @@
     sprite: _Funkystation/Structures/Walls/test/normwall.rsi
   - type: Icon
     sprite: _Funkystation/Structures/Walls/test/normwall.rsi
+    state: icon
   - type: Destructible
     thresholds:
     - trigger:
@@ -143,6 +147,7 @@
     sprite: _Funkystation/Structures/Walls/test/purpwall.rsi
   - type: Icon
     sprite: _Funkystation/Structures/Walls/test/purpwall.rsi
+    state: icon
   - type: Destructible
     thresholds:
     - trigger:
