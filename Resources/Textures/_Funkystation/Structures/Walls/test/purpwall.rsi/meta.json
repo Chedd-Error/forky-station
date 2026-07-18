@@ -11,71 +11,71 @@
       "name": "icon"
     },
     {
-      "name": "test-smooth0",
+      "name": "wall-smooth0",
       "directions": 4
     },
     {
-      "name": "test-smooth1",
+      "name": "wall-smooth1",
       "directions": 4
     },
     {
-      "name": "test-smooth2",
+      "name": "wall-smooth2",
       "directions": 4
     },
     {
-      "name": "test-smooth3",
+      "name": "wall-smooth3",
       "directions": 4
     },
     {
-      "name": "test-smooth4",
+      "name": "wall-smooth4",
       "directions": 4
     },
     {
-      "name": "test-smooth5",
+      "name": "wall-smooth5",
       "directions": 4
     },
     {
-      "name": "test-smooth6",
+      "name": "wall-smooth6",
       "directions": 4
     },
     {
-      "name": "test-smooth7",
+      "name": "wall-smooth7",
       "directions": 4
     },
     {
-      "name": "test-edge0",
+      "name": "wall-edge0",
       "directions": 4
     },
     {
-      "name": "test-edge1",
+      "name": "wall-edge1",
       "directions": 4
     },
     {
-      "name": "test-edge2",
+      "name": "wall-edge2",
       "directions": 4
     },
     {
-      "name": "test-edge3",
+      "name": "wall-edge3",
       "directions": 4
     },
     {
-      "name": "test-edge4",
+      "name": "wall-edge4",
       "directions": 4
     },
     {
-      "name": "test-edge5",
+      "name": "wall-edge5",
       "directions": 4
     },
     {
-      "name": "test-edge6",
+      "name": "wall-edge6",
       "directions": 4
     },
     {
-      "name": "test-edge7",
+      "name": "wall-edge7",
       "directions": 4
     },
     {
-      "name": "test-edge8",
+      "name": "wall-edge8",
       "directions": 4
     }
   ]
