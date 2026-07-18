@@ -91,3 +91,5 @@
   - type: EdgeTrim
     smoothKey: debug2
     base: test
+    addSmoothKeys:
+    - debug1
