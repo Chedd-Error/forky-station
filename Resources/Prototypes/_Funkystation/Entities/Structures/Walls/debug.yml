@@ -24,9 +24,43 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: IconSmooth
-    key: walls
+  - type: EdgeTrim
+    key: debug1
     base: test
+    edgeKeys:
+    - debug2
+
+- type: entity
+  parent: BaseWall
+  id: DebugWallTrimmed2
+  name: second trimmed debug wall
+  suffix: DEBUG
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Sprite
+    sprite: _Funkystation/Debug/edgetrim.rsi
+  - type: Icon
+    sprite: _Funkystation/Debug/edgetrim.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EdgeTrim
+    key: debug2
+    base: test
+    edgeKeys:
+    - debug1
 
 - type: entity
   parent: BaseWall
@@ -54,6 +88,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: IconSmooth
-    key: walls
+  - type: EdgeTrim
+    key: debug2
     base: test

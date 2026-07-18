@@ -5,12 +5,16 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Client._FunkyStation.EdgeTrim
 {
     /// <summary>
-    ///     Makes sprites of other grid-aligned entities like us connect.
+    ///     Makes sprites of other anchored entities adjust based on the trimming keys that they have. IconSmoothing
+    ///     if it were good. Allows for different sprites to be used if edge keys are selected.
     /// </summary>
     /// <remarks>
-    ///     The system is based on Baystation12's smoothwalling, and thus will work with those.
+    ///     The system is based on IconSmoothing's corners smoothing mode, converting sprites needs a '-smooth'
+    ///     placed after the base but before the number. Navigate to, from the base directory,
+    ///     Tools/SS14 Aseprite Templates/EdgeTrimming for more details.
     ///     To use, set <c>base</c> equal to the prefix of the corner states in the sprite base RSI.
-    ///     Any objects with the same <c>key</c> will connect.
+    ///     Any objects with the same <c>key</c> or one listed in AdditionalKeys will connect.
+    ///     Any objects with a <c>key</c> listed in EdgeKeys will use special edge trimming sprites.
     /// </remarks>
     [RegisterComponent]
     public sealed partial class EdgeTrimComponent : Component
@@ -51,39 +55,28 @@ namespace Content.Client._FunkyStation.EdgeTrim
         ///     Mode that controls how the icon should be selected.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("mode")]
-        public IconSmoothingMode Mode = IconSmoothingMode.Corners;
+        public EdgeTrimMode Mode = EdgeTrimMode.Default;
 
         /// <summary>
-        ///     Used by <see cref="IconSmoothSystem"/> to reduce redundant updates.
+        ///     Used by <see cref="EdgeTrimSystem"/> to reduce redundant updates.
         /// </summary>
         internal int UpdateGeneration { get; set; }
     }
 
     /// <summary>
-    ///     Controls the mode with which icon smoothing is calculated.
+    ///     Controls the mode with which trim is calculated.
     /// </summary>
     [PublicAPI]
-    public enum IconSmoothingMode : byte
+    public enum EdgeTrimMode : byte
     {
         /// <summary>
         ///     Each icon is made up of 4 corners, each of which can get a different state depending on
-        ///     adjacent entities clockwise, counter-clockwise and diagonal with the corner.
+        ///     adjacent entities registered counterclockwise with the corner.
         /// </summary>
-        Corners,
+        Default,
 
         /// <summary>
-        ///     There are 16 icons, only one of which is used at once.
-        ///     The icon selected is a bit field made up of the cardinal direction flags that have adjacent entities.
-        /// </summary>
-        CardinalFlags,
-
-        /// <summary>
-        ///     The icon represents a triangular sprite with only 2 states, representing South / East being occupied or not.
-        /// </summary>
-        Diagonal,
-
-        /// <summary>
-        ///     Where this component contributes to our neighbors being calculated but we do not update our own sprite.
+        ///     Where this component contributes to its neighbors being calculated but we do not update its own sprite.
         /// </summary>
         NoSprite,
     }
