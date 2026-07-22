@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "sproten by zergologist (Discord) for Funky Station",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "window-smooth0",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth1",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth2",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth3",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth4",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth5",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth6",
+      "directions": 4
+    },
+    {
+      "name": "window-smooth7",
+      "directions": 4
+    },
+    {
+      "name": "window-edge0",
+      "directions": 4
+    },
+    {
+      "name": "window-edge1",
+      "directions": 4
+    },
+    {
+      "name": "window-edge2",
+      "directions": 4
+    },
+    {
+      "name": "window-edge3",
+      "directions": 4
+    },
+    {
+      "name": "window-edge4",
+      "directions": 4
+    },
+    {
+      "name": "window-edge5",
+      "directions": 4
+    },
+    {
+      "name": "window-edge6",
+      "directions": 4
+    },
+    {
+      "name": "window-edge7",
+      "directions": 4
+    },
+    {
+      "name": "window-edge8",
+      "directions": 4
+    }
+  ]
+}

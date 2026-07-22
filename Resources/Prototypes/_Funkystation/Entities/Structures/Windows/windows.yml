@@ -1,0 +1,95 @@
+- type: entity
+  abstract: true
+  id: FuWindowBase
+  parent: [BaseDeltaPressureGlass, BaseStructure]
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Tag
+    tags:
+      - ForceFixRotations
+      - Window
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Damageable
+    damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: ExaminableDamage
+    messages: WindowMessages
+  - type: Repairable
+  - type: RCDDeconstructable
+    cost: 60 # Funkystation
+    delay: 4
+    fx: EffectRCDDeconstruct4
+  - type: Airtight
+  - type: InteractionPopup
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
+    interactSuccessSound:
+      path: /Audio/Effects/glass_knock.ogg
+  - type: Construction
+    graph: Window
+    node: window
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 2
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+  - type: StaticPrice
+    price: 100
+  - type: BlockWeather
+
+- type: entity
+  id: FuWindowGlass
+  parent: FuWindowBase
+  name: glass window
+  description: An airtight window made from plain glass.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Windows/glass.rsi
+  - type: Icon
+    sprite: _Funkystation/Structures/Windows/glass.rsi
+    state: icon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EdgeTrim
+    smoothKey: windows
+    base: window
+    edgeKeys:
+    - walls

@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseWall
+  id: FuWallSteel
+  name: steel wall
+  description: An airtight, solid wall made out of steel.
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Sprite
+    sprite: _Funkystation/Structures/Walls/steel.rsi
+  - type: Icon
+    sprite: _Funkystation/Structures/Walls/steel.rsi
+    state: icon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EdgeTrim
+    smoothKey: walls
+    base: wall
+    addSmoothKeys:
+    - windows
