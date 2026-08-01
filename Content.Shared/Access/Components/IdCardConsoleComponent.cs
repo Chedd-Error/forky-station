@@ -26,9 +26,9 @@ public sealed partial class IdCardConsoleComponent : Component
         public readonly string FullName;
         public readonly string JobTitle;
         public readonly List<ProtoId<AccessLevelPrototype>> AccessList;
-        public readonly ProtoId<JobPrototype> JobPrototype;
+        public readonly ProtoId<JobPrototype>? JobPrototype;
 
-        public WriteToTargetIdMessage(string fullName, string jobTitle, List<ProtoId<AccessLevelPrototype>> accessList, ProtoId<JobPrototype> jobPrototype)
+        public WriteToTargetIdMessage(string fullName, string jobTitle, List<ProtoId<AccessLevelPrototype>> accessList, ProtoId<JobPrototype>? jobPrototype)
         {
             FullName = fullName;
             JobTitle = jobTitle;
@@ -38,7 +38,7 @@ public sealed partial class IdCardConsoleComponent : Component
     }
 
     // Put this on shared so we just send the state once in PVS range rather than every time the UI updates.
-
+    // TODO: Move these to the YAML prototype or something because holy shit
     [DataField, AutoNetworkedField]
     public List<ProtoId<AccessLevelPrototype>> AccessLevels = new()
     {
@@ -67,6 +67,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Lawyer",
         "Maintenance",
         "Medical",
+        "Newsroom",
         "Quartermaster",
         "Research",
         "ResearchDirector",
