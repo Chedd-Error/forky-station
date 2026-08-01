@@ -1,5 +1,3 @@
-# Tiles you might find in an alien world
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileXenoborg

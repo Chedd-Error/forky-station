@@ -1,6 +1,3 @@
-
-# Operative Balloons, looks just like the real thing!
-
 - type: entity
   parent: [BaseItem, BaseFoldable]
   id: BaseDecoy

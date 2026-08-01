@@ -1,4 +1,3 @@
-# Empty mags
 - type: entity
   abstract: true
   parent: [ BaseItem, BaseSecurityContraband ]

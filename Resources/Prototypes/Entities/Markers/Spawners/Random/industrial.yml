@@ -1,4 +1,3 @@
-#Industrial spawners
 - type: entity
   name: industrial fluff spawner
   id: LootSpawnerIndustrialFluff

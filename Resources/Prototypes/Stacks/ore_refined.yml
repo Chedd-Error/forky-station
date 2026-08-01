@@ -1,5 +1,3 @@
-# Materials which come from refining ores, excluding sheets
-
 - type: stack
   parent: BaseMediumStack
   id: Diamond

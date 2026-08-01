@@ -1,5 +1,3 @@
-# Tiles made of brass
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileBrassFilled

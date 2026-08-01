@@ -1,5 +1,3 @@
-﻿// Global usings for Content.Server
-
 global using System;
 global using System.Collections.Generic;
 global using Robust.Shared.Analyzers;

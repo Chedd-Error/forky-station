@@ -1,11 +1,3 @@
-# Plate
-# In the future, I (Swept) want a system for putting stuff on plates and it'll provide more nutrition
-# If it's on that plate. I've modified all load/slices to fit on the plate, so all we need
-# is that system. Ideally, food on plates would have a system where when thrown, it would
-# break the plate and the loaf would fall off.
-
-# Large Plate
-
 - type: entity
   name: large plate
   parent: BaseItem

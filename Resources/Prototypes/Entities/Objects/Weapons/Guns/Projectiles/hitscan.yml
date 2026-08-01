@@ -1,4 +1,3 @@
-# Used to animate the hitscan effects because effectsystem doesn't support it
 - type: entity
   id: HitscanEffect
   categories: [ HideSpawnMenu ]

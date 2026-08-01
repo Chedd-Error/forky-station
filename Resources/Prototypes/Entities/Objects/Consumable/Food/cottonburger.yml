@@ -1,5 +1,3 @@
-# Cotton Bun
-
 - type: entity
   parent: FoodBreadSliceBase
   id: FoodCottonBun

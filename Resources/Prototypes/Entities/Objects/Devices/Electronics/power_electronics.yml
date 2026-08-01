@@ -1,4 +1,3 @@
-﻿# APC
 - type: entity
   id: APCElectronics
   parent: BaseElectronics

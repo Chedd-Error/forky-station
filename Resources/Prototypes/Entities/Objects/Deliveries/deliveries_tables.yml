@@ -1,4 +1,3 @@
-### Spawners
 - type: entityTable
   id: RandomDeliveryBasic
   table: !type:GroupSelector

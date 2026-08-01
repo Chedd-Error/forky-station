@@ -1,5 +1,3 @@
-### Spam Mail
-
 - type: entity
   id: MailSpamLetter
   name: spam letter

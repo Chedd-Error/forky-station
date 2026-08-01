@@ -1,4 +1,3 @@
-# Non-stackable part that can have a use outside of machines
 - type: latheRecipe
   abstract: true
   id: BasePartRecipe

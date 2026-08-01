@@ -1,4 +1,3 @@
-#nullable enable
 using System.Collections.Generic;
 using Content.Shared.Item;
 using Robust.Client.GameObjects;

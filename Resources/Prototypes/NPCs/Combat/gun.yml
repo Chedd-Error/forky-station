@@ -1,4 +1,3 @@
-# Tries to shoot a target at range.
 - type: htnCompound
   id: GunCombatCompound
   branches:

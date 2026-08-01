@@ -1,7 +1,3 @@
-# For empty check out chemistry bottles
-
-# With cut-out
-
 - type: entity
   parent: DrinkBaseCup
   id: DrinkVisualizerTestCut

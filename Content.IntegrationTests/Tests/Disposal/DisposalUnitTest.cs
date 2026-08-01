@@ -1,4 +1,3 @@
-#nullable enable annotations
 using System.Linq;
 using System.Numerics;
 using Content.Server.Disposal.Unit;

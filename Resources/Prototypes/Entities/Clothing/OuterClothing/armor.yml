@@ -1,8 +1,3 @@
-# Numbers for armor here largely taken from /tg/.
-# armor.yml covers both armored vests (e.g. not just cosmetic) and armor that covers multiple bodyparts/limbs
-
-
-#Basic armor vest for inheritance
 - type: entity
   abstract: true
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseSecurityContraband]

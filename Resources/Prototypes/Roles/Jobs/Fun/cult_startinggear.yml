@@ -1,4 +1,3 @@
-#Cult outfit startingGear definitions.
 - type: startingGear
   id: CultLeaderGear
   equipment:

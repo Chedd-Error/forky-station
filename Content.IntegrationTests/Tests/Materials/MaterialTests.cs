@@ -1,4 +1,3 @@
-#nullable enable
 using Content.Server.Stack;
 using Content.Shared.Stacks;
 using Content.Shared.Materials;

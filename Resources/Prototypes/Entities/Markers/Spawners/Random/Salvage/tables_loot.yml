@@ -1,5 +1,3 @@
-# Scrap: Worthless items that can be recycled into materials
-
 - type: entityTable
   id: SalvageScrapLowValue
   table: !type:GroupSelector

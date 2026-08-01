@@ -1,6 +1,3 @@
-# Non-machine boards, non-computer boards
-# Base categories
-
 - type: latheRecipe
   abstract: true
   id: BaseCircuitryRecipeCategory

@@ -1,5 +1,3 @@
-#Blast door
-
 - type: entity
   parent: BlastDoor
   id: BlastDoorCentralCommand

@@ -1,5 +1,3 @@
-# Carpets that are tiles
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileStackCarpetClown

@@ -1,7 +1,3 @@
-# words/phrases that are used to build ion storm laws
-# 99% of this is just taken from tg and had sussy bits removed
-
-# not using uppercased version adjectives dataset since getting christmas-stealing as a syndicate codeword would suck
 - type: dataset
   id: IonStormAdjectives
   values:
@@ -698,6 +694,7 @@
   - MINING TOOLS
   - MONKEYS
   - MULTITOOLS
+  - NIGHTSTICKS
   - ORES
   - OXYGEN TANKS
   - PACKETS
@@ -733,7 +730,6 @@
   - SPACESUITS
   - SPESOS
   - STEEL SHEETS
-  - STUN BATONS
   - SUITS
   - SUNGLASSES
   - SWORDS

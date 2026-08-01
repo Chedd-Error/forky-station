@@ -1,4 +1,3 @@
-#nullable enable
 using System.Linq;
 using Content.Server.Objectives;
 using Content.Shared.Mind;

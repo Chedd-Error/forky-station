@@ -1,5 +1,3 @@
-# These should be lathe recipes but lathe code sucks so hard rn so they'll be crafted by hand.
-
 - type: construction
   id: TileSteel
   graph: TileSteel

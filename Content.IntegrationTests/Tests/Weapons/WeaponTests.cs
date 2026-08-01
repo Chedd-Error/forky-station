@@ -1,4 +1,4 @@
-﻿using Content.IntegrationTests.Tests.Interaction;
+using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared.Damage.Components;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;

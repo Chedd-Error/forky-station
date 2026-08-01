@@ -1,4 +1,3 @@
-#nullable enable
 using System.Numerics;
 using Content.IntegrationTests.Tests.Interaction;
 using Robust.Shared.GameObjects;

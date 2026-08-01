@@ -1,4 +1,3 @@
-# Actions added to mobs in crit.
 - type: entity
   abstract: true
   parent: BaseMentalAction

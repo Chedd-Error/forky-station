@@ -1,5 +1,3 @@
-# Base Prototypes
-
 - type: latheRecipe
   abstract: true
   id: BaseLightRecipe

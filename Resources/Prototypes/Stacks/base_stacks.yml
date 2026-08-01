@@ -1,6 +1,3 @@
-# Base sizes for stacks in one convenient place
-
-# size used by powders and smokeables
 - type: stack
   abstract: true
   id: BaseVerySmallStack

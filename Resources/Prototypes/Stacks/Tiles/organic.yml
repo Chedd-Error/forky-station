@@ -1,5 +1,3 @@
-# tiles that are fleshy or come from a creature
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileFlesh

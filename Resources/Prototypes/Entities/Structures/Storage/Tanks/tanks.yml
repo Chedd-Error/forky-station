@@ -1,5 +1,3 @@
-# Welding
-
 - type: entity
   id: WeldingFuelTank
   parent: [StorageTank, StructureWheeled]

@@ -1,4 +1,3 @@
-#Table
 - type: entityTable
   id: RandomSatchelTable
   table: !type:GroupSelector

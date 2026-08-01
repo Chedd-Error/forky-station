@@ -32,6 +32,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
     private static readonly EntProtoId DefaultNinjaRule = "NinjaSpawn";
+    private static readonly EntProtoId DefaultBloodCultRule = "BloodCult"; // funkystation
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     // All antag verbs have names so invokeverb works.
@@ -225,5 +226,22 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidProfileComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
+
+        // begin funkystation
+        var bloodCultName = Loc.GetString("admin-verb-text-make-bloodcult");
+        Verb bloodCult = new()
+        {
+            Text = bloodCultName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Structures/BloodCult/bloodrune.rsi"), "offering-icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<BloodCultRuleComponent>(targetPlayer, DefaultBloodCultRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", bloodCultName, Loc.GetString("admin-verb-make-bloodcult")),
+        };
+        args.Verbs.Add(bloodCult);
+        // end funkystation
     }
 }

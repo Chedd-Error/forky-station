@@ -1,5 +1,3 @@
-# White steel tiles
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileWhite

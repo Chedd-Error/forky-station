@@ -1,5 +1,3 @@
-# -- Melee --
-# Selects a target in melee and tries to attack it.
 - type: htnCompound
   id: MeleeCombatCompound
   branches:

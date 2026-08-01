@@ -1,4 +1,3 @@
-#default species weights used for randomly selected species
 - type: weightedRandomSpecies
   id: SpeciesWeights
   weights:

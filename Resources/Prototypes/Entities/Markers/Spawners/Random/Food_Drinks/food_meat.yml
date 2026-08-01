@@ -1,4 +1,3 @@
-#Spawners
 - type: entity
   id: RandomMeat
   name: random meat spawner

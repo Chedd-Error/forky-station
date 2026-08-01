@@ -1,7 +1,3 @@
-#When adding new hardsuits, please try to keep the organization consistent with hardsuit-helmets.yml (if possible.)
-
-#CREW HARDSUITS
-#Atmospherics Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband]
   id: ClothingOuterHardsuitAtmos

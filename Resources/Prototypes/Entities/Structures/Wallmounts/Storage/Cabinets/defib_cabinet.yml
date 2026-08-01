@@ -1,4 +1,3 @@
-# TODO: same as other wallmount cabinets they should use a base structure prototype
 - type: entity
   parent: BaseWallmountCabinet
   id: DefibrillatorCabinet

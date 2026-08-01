@@ -1,5 +1,3 @@
-# When adding new drinks also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\drinks_bottles.yml
-
 - type: entity
   abstract: true
   parent: [ DrinkBaseMaterialGlass, DrinkBase, DrinkBaseOpenable ]

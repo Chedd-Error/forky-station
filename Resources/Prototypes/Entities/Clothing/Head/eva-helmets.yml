@@ -1,4 +1,3 @@
-#EVA Helmet
 - type: entity
   parent: ClothingHeadEVAHelmetBase
   id: ClothingHeadHelmetEVA

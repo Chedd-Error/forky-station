@@ -1,5 +1,3 @@
-# When adding new soaps, also add them to id: AllSoapsTable
-
 - type: entity
   abstract: true
   parent: BaseItem

@@ -1,5 +1,3 @@
-# Tables
-
 - type: entityTable
   id: NukeOpsLootTable
   table: !type:GroupSelector

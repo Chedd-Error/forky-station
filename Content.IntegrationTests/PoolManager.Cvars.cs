@@ -1,4 +1,3 @@
-#nullable enable
 using Content.Shared.CCVar;
 
 namespace Content.IntegrationTests;

@@ -1,5 +1,3 @@
-﻿#nullable disable
-
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore.Migrations;
 

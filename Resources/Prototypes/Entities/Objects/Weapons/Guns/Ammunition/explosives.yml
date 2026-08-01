@@ -1,5 +1,3 @@
-# Rockets
-
 - type: entity
   parent: [BaseItem, BaseMajorContraband]
   id: CartridgeRocket

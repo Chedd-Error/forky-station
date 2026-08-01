@@ -1,4 +1,3 @@
-# gloves
 - type: entity
   parent: BaseToggleAction
   id: ActionToggleNinjaGloves

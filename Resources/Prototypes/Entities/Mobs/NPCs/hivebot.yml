@@ -1,4 +1,3 @@
-# Base hivebot
 - type: entity
   parent: [ BaseSimpleMob, MobCombat, MobRobotic ]
   id: MobHivebot

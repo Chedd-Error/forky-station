@@ -1,4 +1,3 @@
-# DO NOT ADD MORE, USE UNIFORM DYING
 - type: vendingMachineInventory
   id: ClothesMateInventory
   startingInventory:

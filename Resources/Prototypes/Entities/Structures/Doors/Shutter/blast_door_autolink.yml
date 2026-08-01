@@ -1,5 +1,3 @@
-# AutoLink variants of BlastDoor (from Outer Rim)
-
 - type: entity
   id: BlastDoorExterior1
   parent: BlastDoor

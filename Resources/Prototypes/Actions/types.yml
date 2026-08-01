@@ -1,6 +1,3 @@
-# base actions
-
-# base prototype for all action entities
 - type: entity
   abstract: true
   id: BaseAction

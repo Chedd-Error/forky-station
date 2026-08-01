@@ -1,7 +1,3 @@
-# When adding new figurines, also add them to id: AllFigurineMechsTable
-
-#TODO give these the new base sprite used in the regular action figures.
-#No, not like a template. Just the base of the toy.
 - type: entity
   abstract: true
   parent: BaseFigurine

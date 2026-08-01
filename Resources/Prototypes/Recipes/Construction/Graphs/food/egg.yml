@@ -1,4 +1,3 @@
-# egg explodes when heated!!!
 - type: constructionGraph
   id: Egg
   start: start

@@ -1,5 +1,3 @@
-# Tier 1
-
 - type: technology
   id: SalvageEquipment
   name: research-technology-salvage-equipment
@@ -149,6 +147,7 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  - ElectrolyzerMachineCircuitboard # Funky atmos = /tg/ gases
   technologyPrerequisites:
   - AtmosphericTech
 

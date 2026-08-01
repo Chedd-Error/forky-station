@@ -1,4 +1,3 @@
-#nullable enable
 using Content.Shared.Alert;
 using Content.Shared.Input;
 using Content.Shared.Movement.Pulling.Components;

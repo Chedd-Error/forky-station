@@ -1,4 +1,4 @@
-﻿using Content.Client.Resources;
+using Content.Client.Resources;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -23,7 +23,7 @@ public sealed class NotoFontFamilyStack(IResourceCache resCache, string variant 
     ///     0 is the font kind.
     ///     1 is the font kind with BoldItalic replaced with Bold when it occurs.
     /// </remarks>
-    private string _fontPrimary = $"/Fonts/NotoSans{variant}/NotoSans{variant}-{{0}}.ttf";
+    private string _fontPrimary = $"/Fonts/Atkinson/AtkinsonHyperlegibleNext-{{0}}.ttf"; // FUNKY EDIT
 
     /// <summary>
     ///     The symbols font path, with string substitution markers.

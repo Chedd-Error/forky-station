@@ -1,4 +1,3 @@
-﻿## Abstracts
 - type: injectorMode
   abstract: true
   id: BaseInjectMode

@@ -1,6 +1,3 @@
-# Damage due to being unable to breathe.
-# Represents not enough oxygen (or equivalent) getting to the blood.
-# Usually healed automatically if entity can breathe
 - type: damageType
   id: Asphyxiation
   name: damage-type-asphyxiation

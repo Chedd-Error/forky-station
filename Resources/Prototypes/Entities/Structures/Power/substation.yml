@@ -1,4 +1,3 @@
-# Core logic shared between regular and wall-mount substation
 - type: entity
   abstract: true
   id: CoreSubstation

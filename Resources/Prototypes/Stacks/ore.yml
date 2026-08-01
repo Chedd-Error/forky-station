@@ -1,5 +1,3 @@
-# unrefined ore
-
 - type: stack
   parent: BaseMediumStack
   id: GoldOre

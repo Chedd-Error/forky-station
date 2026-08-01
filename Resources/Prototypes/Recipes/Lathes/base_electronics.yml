@@ -1,5 +1,3 @@
-# Costs for computer boards, machine boards, and circuitry
-
 - type: latheRecipe
   abstract: true
   id: BaseElectronicsRecipe

@@ -1,4 +1,3 @@
-# for important antag roles (nukie reinforcements, ninja, etc.)
 - type: ghostRoleRaffleSettings
   id: default
   settings:

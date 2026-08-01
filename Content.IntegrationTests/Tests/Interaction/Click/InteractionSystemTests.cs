@@ -1,4 +1,3 @@
-#nullable enable annotations
 using System.Numerics;
 using Content.Server.Interaction;
 using Content.Shared.Hands.Components;

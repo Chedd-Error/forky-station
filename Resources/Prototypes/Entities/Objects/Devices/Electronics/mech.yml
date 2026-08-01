@@ -1,5 +1,3 @@
-# Ripley
-
 - type: entity
   id: RipleyCentralElectronics
   parent: BaseElectronics

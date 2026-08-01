@@ -1,5 +1,3 @@
-# electronic or computery looking tiles
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileGCircuit

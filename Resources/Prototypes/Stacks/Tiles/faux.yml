@@ -1,5 +1,3 @@
-# Faux tiles that mimic planet terrain
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileAstroGrass

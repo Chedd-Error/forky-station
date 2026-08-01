@@ -1,4 +1,3 @@
-
 namespace Content.Server.Speech.Components;
 
 /// <summary>

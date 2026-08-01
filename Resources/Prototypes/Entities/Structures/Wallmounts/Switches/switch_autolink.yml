@@ -1,5 +1,3 @@
-# AutoLink variants of SignalButton (from Outer Rim)
-
 - type: entity
   id: SignalButtonExt1
   parent: SignalButton

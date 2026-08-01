@@ -1,4 +1,3 @@
-# Mob
 - type: entity
   parent: BaseMob
   id: MobParadox

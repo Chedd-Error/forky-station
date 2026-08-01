@@ -1,5 +1,3 @@
-# Most of these have DO NOT MAP, since stations are completely unequipped to deal with ship combat + these are basically placeholder.
-
 - type: entity
   id: ShuttleGunSvalinnMachineGunCircuitboard
   parent: BaseMachineCircuitboard

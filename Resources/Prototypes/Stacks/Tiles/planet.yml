@@ -1,5 +1,3 @@
-# tiles that spawn on planets and are generally unobtainable
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileGrass

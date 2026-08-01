@@ -1,6 +1,3 @@
-# Tiles in a 4 square pattern
-
-# Single color
 - type: stack
   parent: BaseTileStack
   id: FloorTileFreezer

@@ -1,4 +1,3 @@
-#Syndie
 - type: entity
   parent: MobHuman
   id: MobHumanSyndicateAgentBase

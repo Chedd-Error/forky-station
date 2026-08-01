@@ -1,4 +1,3 @@
-# Low value
 - type: biomeMarkerLayer
   id: OreIron
   entityMask:

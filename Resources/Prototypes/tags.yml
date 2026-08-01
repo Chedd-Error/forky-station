@@ -1,8 +1,3 @@
-# PUT YOUR TAGS IN ALPHABETICAL ORDER
-# ALSO DOCUMENT WHAT THE HELL THEY DO
-
-## A ##
-
 - type: Tag
   id: AccessBreakerImmune # Default value in EmagProviderComponent. Marks tagged entity as immune to AccessBreakerUnlimited.
 
@@ -1183,6 +1178,9 @@
 
 - type: Tag
   id: RawMaterial # MaterialStorage whitelist for many machines and lathes. Storage whitelist: MaterialBag
+
+- type: Tag
+  id: ReactorPart #FarHorizons
 
 # Give this to something that doesn't need any special recycler behavior and just needs deleting.
 - type: Tag

@@ -1,5 +1,3 @@
-## Random humanoids
-
 - type: randomHumanoidSettings
   id: EventHumanoid
   components:

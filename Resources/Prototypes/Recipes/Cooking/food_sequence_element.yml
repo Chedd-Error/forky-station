@@ -1,5 +1,3 @@
-# Bun bottom
-
 - type: foodSequenceElement
   id: BunTopBurger
   final: true

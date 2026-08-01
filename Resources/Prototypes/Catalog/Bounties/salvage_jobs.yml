@@ -1,8 +1,3 @@
-# NOTE: if you add any bounties to this, you need to go to Resources/Prototypes/Entities/Stations/base.yml and adjust the thresholds on BaseStationSalvageJobs.
-# If you don't do this, you won't raise the limit for completing a given rank and may throw off some balance.
-
-# Tier 1
-
 - type: cargoBounty
   id: BountyTeethSpaceCarp
   reward: 7500

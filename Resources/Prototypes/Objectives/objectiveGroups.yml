@@ -1,4 +1,3 @@
-# Traitor
 - type: weightedRandom
   id: TraitorObjectiveGroups
   weights:

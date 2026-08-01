@@ -1,5 +1,3 @@
-# expensive looking tiles
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileGold

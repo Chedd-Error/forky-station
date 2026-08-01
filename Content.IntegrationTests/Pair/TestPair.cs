@@ -1,4 +1,3 @@
-﻿#nullable enable
 using System.Collections.Generic;
 using Content.Client.IoC;
 using Content.Client.Parallax.Managers;

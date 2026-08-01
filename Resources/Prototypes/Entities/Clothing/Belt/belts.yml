@@ -1,5 +1,3 @@
-## Belts that need/have visualizers
-
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
   id: ClothingBeltSheath

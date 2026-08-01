@@ -1,5 +1,3 @@
-# tiles typically found in maintenance
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileTechmaint

@@ -1,5 +1,3 @@
-﻿# base
-
 - type: entity
   id: VendingMachine
   parent: BaseMachinePowered

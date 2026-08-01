@@ -1,4 +1,3 @@
-﻿#nullable enable
 using Content.Shared.Physics;
 using Content.Shared.Spawning;
 using Robust.Shared.GameObjects;

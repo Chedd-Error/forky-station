@@ -1,5 +1,3 @@
-# Tiles that come straight from the eighties
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileLino

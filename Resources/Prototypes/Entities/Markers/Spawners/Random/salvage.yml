@@ -1,6 +1,3 @@
-# NOTE! All mobs that come out of this should have Salvage rulesets.
-# These rulesets exist because Salvage mobs kept harassing the station and going out of control.
-
 - type: entity
   name: Salvage Material Crate Spawner
   id: SalvageMaterialCrateSpawner

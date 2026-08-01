@@ -1,4 +1,3 @@
-#Spawners
 - type: entity
   id: RandomSmokables
   name: random smokable spawner

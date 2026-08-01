@@ -1,4 +1,3 @@
-# A basic inheritable template for a gun that is wieldable and has the standard inaccuracy.
 - type: entity
   id: BaseGunWieldable
   abstract: true

@@ -1,14 +1,3 @@
-# This is a basic dictionary that maps old entity prototype ids to new ids. This only works for entity prototypes, and
-# is intended to allow maps to load without having to manually edit them. An empty or "null" string results in the
-# entity getting deleted.
-
-# e.g., you can swap all walls with windows and delete all tables by adding lines like:
-#
-# Window: WallSolid
-# WallSolid: Window
-# Table: null
-
-# 2023-07-03
 ClothingHeadHelmetHelmet: ClothingHeadHelmetBasic
 ClothingHeadHelmetHelmetOld: ClothingHeadHelmetBasic
 
@@ -804,3 +793,11 @@ TowelColorYellow: null
 TowelColorMaroon: null
 TowelColorSilver: null
 TowelColorMime: null
+
+# 2026-02-27
+Stunbaton: Nightstick
+WeaponDisabler: null
+WeaponTaser: null
+
+# TODO: When the RG-2 and its safe are ported over, uncomment the line below and add a timestamp.
+#GunSafeDisabler: GunSafePistolRg2

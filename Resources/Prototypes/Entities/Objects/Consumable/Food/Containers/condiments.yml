@@ -1,5 +1,3 @@
-# TODO: Removes the icon components from all these when that gets fixed.
-
 - type: entity
   parent: BaseItem
   id: BaseFoodCondiment

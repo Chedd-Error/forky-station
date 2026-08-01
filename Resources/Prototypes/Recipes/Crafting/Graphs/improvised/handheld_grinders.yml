@@ -1,5 +1,3 @@
-
-# Mortar
 - type: constructionGraph
   id: MakeshiftMortarAndPestle
   start: start

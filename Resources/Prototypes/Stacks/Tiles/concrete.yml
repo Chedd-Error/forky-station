@@ -1,5 +1,3 @@
-# Tiles made of concrete
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileConcrete

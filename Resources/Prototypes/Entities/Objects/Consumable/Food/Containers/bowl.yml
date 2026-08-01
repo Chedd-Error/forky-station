@@ -1,5 +1,3 @@
-# Bowls
-
 - type: entity
   parent: ReagentContainerBase
   id: FoodBowlBig

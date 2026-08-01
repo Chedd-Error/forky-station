@@ -1,4 +1,3 @@
-#Entities found at entities/objects/specific/medical
 - type: entity
   id: MedkitFilled
   suffix: Filled

@@ -1,4 +1,3 @@
-#Hunger
 - type: satiationIcon
   id: HungerIcon
   abstract: true

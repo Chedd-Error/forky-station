@@ -1,5 +1,3 @@
-# For cosmetic belts parenting off ClothingBeltBase
-
 - type: entity
   parent: ClothingBeltBase
   id: ClothingBeltChampion

@@ -1,5 +1,3 @@
-# Dark steel tiles
-
 - type: stack
   parent: BaseTileStack
   id: FloorTileDark

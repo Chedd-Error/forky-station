@@ -1,5 +1,3 @@
-# Minor medical loot spawner
-# Use case: Common areas that aren't medical
 - type: entity
   name: healing supplies spawner
   id: LootSpawnerMedicalMinor

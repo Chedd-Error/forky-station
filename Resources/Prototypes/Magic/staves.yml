@@ -1,6 +1,3 @@
-# non-projectile / "gun" staves
-
-# wand that gives lights an RGB effect.
 - type: entity
   id: RGBStaff
   parent: BaseItem

@@ -1,12 +1,3 @@
-# Threshold prototypes for AtmosMonitors
-
-# NOTE: Warning thresholds are given as multipliers of the danger bound. For
-# example, if upperBound=10 (kPa) and upperWarnRound=0.5, that means the upper
-# warning threshold is actually 5 (kPa).
-#
-# As a result, all upperWarn's should be <1 and lowerWarn's should be >1,
-# otherwise the warning will never kick in.
-
 - type: alarmThreshold
   id: stationTemperature
   upperBound: !type:AlarmThresholdSetting

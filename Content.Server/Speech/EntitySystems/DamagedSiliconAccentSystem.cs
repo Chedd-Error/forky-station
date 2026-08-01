@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using Content.Server.Destructible;
 using Content.Shared.Speech.Components;
 using Content.Shared.Damage.Components;

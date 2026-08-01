@@ -1,4 +1,3 @@
-# Hacky for the stress test so don't even consider adding to this
 - type: entity
   name: burrower
   id: MobXeno

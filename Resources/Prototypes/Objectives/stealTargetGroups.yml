@@ -1,5 +1,3 @@
-# Traitor single items
-
 - type: stealTargetGroup
   id: Hypospray
   name: steal-target-groups-hypospray

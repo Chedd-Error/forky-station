@@ -1,4 +1,3 @@
-# Actions
 - type: entity
   parent: BaseAction
   id: ActionJumpToCore

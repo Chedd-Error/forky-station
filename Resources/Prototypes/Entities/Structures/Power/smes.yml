@@ -1,4 +1,3 @@
-# Base SMES
 - type: entity
   abstract: true
   id: BaseSMES

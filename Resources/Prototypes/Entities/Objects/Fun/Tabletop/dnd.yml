@@ -1,6 +1,3 @@
-﻿# When adding a new battlemap, also add it to id: AllBattlemapsTable
-
-# Board item (given to players)
 - type: entity
   abstract: true
   parent: BaseBoardEntity

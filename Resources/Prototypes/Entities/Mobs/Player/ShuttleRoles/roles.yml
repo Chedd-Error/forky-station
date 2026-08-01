@@ -1,9 +1,3 @@
-## See also ../settings.yml and ../spawners.yml
-
-### Visitors with Visitor ID
-
-# Command
-
 - type: entity
   id: RandomHumanoidVisitorCaptain
   name: visiting Captain ghost role
