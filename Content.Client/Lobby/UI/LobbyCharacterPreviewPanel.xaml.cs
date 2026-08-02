@@ -17,11 +17,11 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
 {
     public const string StyleIdentifierLobbyCollapsibleSubsection = "lobbyCollapsibleSubsection";
 
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
 
-    [Dependency] private readonly IClientPreferencesManager _preferences = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly JobRequirementsManager _requirements = default!;
+    [Dependency] private IClientPreferencesManager _preferences = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private JobRequirementsManager _requirements = default!;
 
     private SpriteSystem _sprite = default!;
 
