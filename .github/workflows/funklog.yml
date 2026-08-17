@@ -50,3 +50,4 @@ jobs:
         commit_user_name: funkystationbot
         commit_user_email: funkystationbot@users.noreply.github.com
         file_pattern: Resources/Changelog/Funklog.yml
+        branch: master
