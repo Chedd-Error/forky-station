@@ -132,7 +132,7 @@
   - type: ExpendableLight
     spentName: expendable-light-spent-purple-glowstick-name
   - type: PointLight
-    color: "#f8c53a"
+    color: "#9c8bdb"
   - type: Sprite
     sprite: _Funkystation/Objects/Misc/Glowsticks/purple.rsi
   - type: Item
