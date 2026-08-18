@@ -148,7 +148,7 @@
   components:
   - type: ExpendableLight
     spentName: expendable-light-spent-white-glowstick-name
-    glowDuration: 600
+    glowDuration: 450
   - type: PointLight
     color: "#ffffff"
     radius: 6

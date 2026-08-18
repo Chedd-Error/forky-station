@@ -4,7 +4,7 @@
   id: GlowstickBase
   name: glowstick
   description: Useful for raves and emergencies.
-  suffix: DEPRECIATED # Funky change, use FuGlowstickColor instead
+  suffix: DEPRECATED # Funky change, use FuGlowstickColor instead
   components:
   - type: SpaceGarbage
   - type: ExpendableLight
