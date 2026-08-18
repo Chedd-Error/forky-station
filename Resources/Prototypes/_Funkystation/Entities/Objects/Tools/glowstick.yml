@@ -198,7 +198,7 @@
     - id: FuGlowstickPurple
     - id: FuGlowstickPackTrash
     sound:
-      path: /Audio/Effects/unwrap.ogg
+      path: /Audio/Items/Handcuffs/rope_breakout.ogg
 
 - type: entity
   parent: FoodPacketTrash
@@ -209,3 +209,6 @@
   - type: Sprite
     sprite: _Funkystation/Objects/Misc/Glowsticks/pack.rsi
     state: trash
+  - type: Item
+    sprite: _Funkystation/Objects/Misc/Glowsticks/pack.rsi
+    heldPrefix: trash
