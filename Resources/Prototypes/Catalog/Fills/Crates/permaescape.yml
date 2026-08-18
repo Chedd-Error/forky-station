@@ -158,24 +158,36 @@
           prob: 0.50
         - id: FuGlowstickBlue
           prob: 0.20
+        # - id: GlowstickBlue
+        #   prob: 0.05
         - id: FuGlowstickGreen
           prob: 0.50
         - id: FuGlowstickGreen
           prob: 0.20
+        # - id: GlowstickGreen
+        #   prob: 0.05
         - id: FuGlowstickPurple
           prob: 0.50
         - id: FuGlowstickPurple
           prob: 0.20
+        # - id: GlowstickPurple
+        #   prob: 0.05
         - id: FuGlowstickRed
           prob: 0.50
         - id: FuGlowstickRed
           prob: 0.20
+        # - id: GlowstickRed
+        #   prob: 0.05
         - id: FuGlowstickYellow
           prob: 0.50
         - id: FuGlowstickYellow
           prob: 0.20
+        # - id: GlowstickYellow
+        #   prob: 0.05
         - id: FuGlowstickWhite
           prob: 0.20
+        - id: FuGlowstickWhite
+          prob: 0.05
         - id: FuGlowstickPackTrash
           prob: 0.50
         - id: FuGlowstickPack
