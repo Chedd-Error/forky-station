@@ -12,4 +12,11 @@
   id: 2
   time: '2026-08-17T06:08:22Z'
   url: https://github.com/funky-station/forky-station/pull/248
+- author: ClocksAreWorthy
+  changes:
+  - message: Added a Lectern!
+    type: Add
+  id: 3
+  time: '2026-08-18T19:46:14Z'
+  url: https://github.com/funky-station/forky-station/pull/223
 Order: -1
