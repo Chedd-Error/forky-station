@@ -19,4 +19,11 @@
   id: 3
   time: '2026-08-18T19:46:14Z'
   url: https://github.com/funky-station/forky-station/pull/223
+- author: Xcybitt
+  changes:
+  - message: Added radioactivity to uranium.
+    type: Add
+  id: 4
+  time: '2026-08-18T20:42:53Z'
+  url: https://github.com/funky-station/forky-station/pull/97
 Order: -1
