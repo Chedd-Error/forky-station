@@ -52,4 +52,12 @@
   id: 7
   time: '2026-08-19T04:43:38Z'
   url: https://github.com/funky-station/forky-station/pull/327
+- author: Pop-Up Pup
+  changes:
+  - message: Completely rework the thief antagonist to be score based instead of hunting
+      for specific items
+    type: Tweak
+  id: 8
+  time: '2026-08-19T10:34:05Z'
+  url: https://github.com/funky-station/forky-station/pull/227
 Order: -1
