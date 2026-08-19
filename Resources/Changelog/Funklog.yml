@@ -26,4 +26,12 @@
   id: 4
   time: '2026-08-18T20:42:53Z'
   url: https://github.com/funky-station/forky-station/pull/97
+- author: Miguel4387
+  changes:
+  - message: Changed base airlock and firelock open and close sound as well as bolting
+      and unbolting sounds to sound like funky
+    type: Tweak
+  id: 5
+  time: '2026-08-19T02:04:06Z'
+  url: https://github.com/funky-station/forky-station/pull/200
 Order: -1
