@@ -34,4 +34,11 @@
   id: 5
   time: '2026-08-19T02:04:06Z'
   url: https://github.com/funky-station/forky-station/pull/200
+- author: AraiMaia
+  changes:
+  - message: Added a slider to define the intensity of the red pain flashes.
+    type: Add
+  id: 6
+  time: '2026-08-19T02:43:03Z'
+  url: https://github.com/funky-station/forky-station/pull/253
 Order: -1
