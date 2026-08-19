@@ -41,4 +41,15 @@
   id: 6
   time: '2026-08-19T02:43:03Z'
   url: https://github.com/funky-station/forky-station/pull/253
+- author: Zergologist, AraiMaia
+  changes:
+  - message: Added Caution tape for Engineering and Security
+    type: Add
+  - message: Warning cones now stack.
+    type: Add
+  - message: Added floodlights to EngiVend.
+    type: Tweak
+  id: 7
+  time: '2026-08-19T04:43:38Z'
+  url: https://github.com/funky-station/forky-station/pull/327
 Order: -1
