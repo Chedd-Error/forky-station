@@ -74,4 +74,11 @@
   id: 10
   time: '2026-08-21T01:52:49Z'
   url: https://github.com/funky-station/forky-station/pull/254
+- author: battlecruiser12
+  changes:
+  - message: Ported the Retro Laser Gun resprite from Funky.
+    type: Add
+  id: 11
+  time: '2026-08-21T04:19:19Z'
+  url: https://github.com/funky-station/forky-station/pull/304
 Order: -1
