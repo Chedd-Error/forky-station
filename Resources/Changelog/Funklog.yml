@@ -67,4 +67,11 @@
   id: 9
   time: '2026-08-19T13:19:08Z'
   url: https://github.com/funky-station/forky-station/pull/242
+- author: Rainbeon, AraiMaia
+  changes:
+  - message: Funky borg sprites and behaviour are here again.
+    type: Add
+  id: 10
+  time: '2026-08-21T01:52:49Z'
+  url: https://github.com/funky-station/forky-station/pull/254
 Order: -1
