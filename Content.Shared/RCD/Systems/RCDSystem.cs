@@ -879,8 +879,6 @@ public sealed partial class RCDSystem : EntitySystem
                 var mapCoords = new MapCoordinates(entityCoords.ToMapPos(EntityManager, _transform), entityCoords.GetMapId(EntityManager));
                 // end funkystation
 
-                var ent = Spawn(proto, mapCoords, rotation: rotation);
-
                 switch (prototype.Rotation)
                 {
                     case RcdRotation.Fixed:
