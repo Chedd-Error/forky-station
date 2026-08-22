@@ -129,12 +129,6 @@
       weight: 10
     - id: XenoArtifactShatterWindows
       weight: 8
-    - id: XenoArtifactFoamGood
-      weight: 4
-    - id: XenoArtifactFoamDangerous
-      weight: 2
-    - id: XenoArtifactPuddleRare
-      weight: 2
     - id: XenoArtifactAnomalySpawn
       weight: 10
     - id: XenoArtifactIgnite
@@ -716,7 +710,7 @@
       deleteSpawnerAfterSpawn: false
       table: !type:GroupSelector
         children:
-        - id: FloraTreeTable
+        - id: RandomFloraTree
           weight: 5
         - id: PottedPlant2 #Funky changes
           weight: 1
