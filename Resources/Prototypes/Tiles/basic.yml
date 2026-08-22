@@ -3,36 +3,89 @@
   id: FloorSteel
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray.png
+  sprite: /Textures/_Funkystation/Tiles/steel.png # Funky
+  variants: 4
   itemDrop: FloorTileItemSteel
+
+- type: tile
+  id: FloorSteelCheckerLight
+  parent: BaseStationTile
+  name: tiles-steel-floor-checker-light
+  sprite: /Textures/_Funkystation/Tiles/cafeteria.png # Funky
+  variants: 4
+  itemDrop: FloorTileItemSteelCheckerLight
+
+- type: tile
+  id: FloorSteelCheckerDark
+  parent: BaseStationTile
+  name: tiles-steel-floor-checker-dark
+  sprite: /Textures/_Funkystation/Tiles/checker_dark.png # Funky
+  variants: 4
+  itemDrop: FloorTileItemSteelCheckerDark
 
 - type: tile
   id: FloorSteelMini
   parent: BaseStationTile
   name: tiles-steel-floor-mini
-  sprite: /Textures/Tiles/Basic/Gray/gray-mini.png
+  sprite: /Textures/_Funkystation/Tiles/steel_mini.png # Funky
+  variants: 4
   itemDrop: FloorTileItemSteelMini
 
 - type: tile
   id: FloorSteelPavement
   parent: BaseStationTile
   name: tiles-steel-floor-pavement
-  sprite: /Textures/Tiles/Basic/Gray/gray-pavement.png
+  sprite: /Textures/_Funkystation/Tiles/steel_pavement.png # Funky
+  variants: 4
   itemDrop: FloorTileItemSteelPavement
+
+- type: tile
+  id: FloorSteelDiagonal
+  parent: BaseStationTile
+  name: tiles-steel-floor-diagonal
+  sprite: /Textures/_Funkystation/Tiles/steel_diagonal.png # Funky
+  variants: 4
+  itemDrop: FloorTileItemSteelDiagonal
+
+- type: tile
+  id: FloorSteelOffset
+  parent: BaseStationTile
+  name: tiles-steel-floor-offset
+  sprite: /Textures/_Funkystation/Tiles/steel_offset.png # Funky
+  itemDrop: FloorTileItemSteelOffset
+
+- type: tile
+  id: FloorSteelMono
+  parent: BaseStationTile
+  name: tiles-steel-floor-mono
+  sprite: /Textures/_Funkystation/Tiles/steel_mono.png # Funky
+  variants: 4
+  itemDrop: FloorTileItemSteelMono
 
 - type: tile
   id: FloorSteelPavementVertical
   parent: BaseStationTile
   name: tiles-steel-floor-pavement-vertical
-  sprite: /Textures/Tiles/Basic/Gray/gray-pavement-vertical.png
+  sprite: /Textures/_Funkystation/Tiles/steel_pavement_vertical.png # Funky
+  variants: 4
   itemDrop: FloorTileItemSteelPavementVertical
 
 - type: tile
   id: FloorSteelHerringbone
   parent: BaseStationTile
   name: tiles-steel-floor-herringbone
-  sprite: /Textures/Tiles/Basic/Gray/gray-herringbone.png
+  sprite: /Textures/_Funkystation/Tiles/steel_herringbone.png # Funky
+  variants: 4
   itemDrop: FloorTileItemSteelHerringbone
+
+# Funky - Steel diagonal mini
+- type: tile
+  id: FloorSteelDiagonalMini
+  parent: BaseStationTile
+  name: tiles-steel-floor-diagonal-mini
+  sprite: /Textures/_Funkystation/Tiles/steel_diagonal_mini.png
+  variants: 4
+  itemDrop: FloorTileItemSteelDiagonalMini
 
 - type: tile
   parent: BaseStationTile
@@ -52,7 +105,7 @@
   id: FloorTechMaint2
   parent: BaseStationTile
   name: tiles-techmaint2-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray-maint.png
+  sprite: /Textures/_Funkystation/Tiles/steel_maint.png # Funky
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteelMaint
@@ -61,23 +114,31 @@
   id: FloorPlastic
   parent: BaseStationTile
   name: tiles-plastic-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray-plastic.png
+  sprite: /Textures/_Funkystation/Tiles/plastic.png # Funky
+  variants: 4
   itemDrop: FloorTileItemSteel
 
 - type: tile
   id: FloorSteelDamaged
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/Basic/Gray/gray-damaged.png
-  variants: 4
-  itemDrop: FloorTileItemSteel #This should probably be made null when it becomes possible to make it such, in SS13 prying destroyed tiles wouldn't give you anything.
+  sprite: /Textures/_Funkystation/Tiles/steel_damaged.png # Funky
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  itemDrop: null
 
 #### WHITE
 - type: tile
   id: FloorWhite
   parent: BaseStationTile
   name: tiles-white-floor
-  sprite: /Textures/Tiles/Basic/White/white.png
+  sprite: /Textures/_Funkystation/Tiles/white.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
@@ -86,7 +147,8 @@
   id: FloorWhiteMini
   parent: BaseStationTile
   name: tiles-white-floor-mini
-  sprite: /Textures/Tiles/Basic/White/white-mini.png
+  sprite: /Textures/_Funkystation/Tiles/white_mini.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMini
@@ -109,7 +171,8 @@
   id: FloorWhitePavement
   parent: BaseStationTile
   name: tiles-white-floor-pavement
-  sprite: /Textures/Tiles/Basic/White/white-pavement.png
+  sprite: /Textures/_Funkystation/Tiles/white_pavement.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavement
@@ -118,16 +181,18 @@
   id: FloorWhiteMono
   parent: BaseStationTile
   name: tiles-white-floor-mono
-  sprite: /Textures/Tiles/Basic/White/white-mono.png
+  sprite: /Textures/_Funkystation/Tiles/white_mono.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
-  itemDrop: FloorTileItemWhiteMono
+  itemDrop: FloorTileItemWhite
 
 - type: tile
   id: FloorWhitePavementVertical
   parent: BaseStationTile
   name: tiles-white-floor-pavement-vertical
-  sprite: /Textures/Tiles/Basic/White/white-pavement-vertical.png
+  sprite: /Textures/_Funkystation/Tiles/white_pavement_vertical.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavementVertical
@@ -136,7 +201,8 @@
   id: FloorWhiteHerringbone
   parent: BaseStationTile
   name: tiles-white-floor-herringbone
-  sprite: /Textures/Tiles/Basic/White/white-herringbone.png
+  sprite: /Textures/_Funkystation/Tiles/white_herringbone.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteHerringbone
@@ -145,17 +211,50 @@
   id: FloorWhitePlastic
   parent: BaseStationTile
   name: tiles-plastic-white-floor
-  sprite: /Textures/Tiles/Basic/White/white-plastic.png
+  sprite: /Textures/_Funkystation/Tiles/white_plastic.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
+
+#Funky start - More white floors
+- type: tile
+  id: FloorWhiteDiagonal
+  parent: BaseStationTile
+  name: tiles-white-floor-diagonal
+  sprite: /Textures/_Funkystation/Tiles/white_diagonal.png
+  variants: 4
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemWhiteDiagonal
+
+- type: tile
+  id: FloorWhiteOffset
+  parent: BaseStationTile
+  name: tiles-white-floor-offset
+  sprite: /Textures/_Funkystation/Tiles/white_offset.png
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemWhiteOffset
+
+- type: tile
+  id: FloorWhiteDiagonalMini
+  parent: BaseStationTile
+  name: tiles-white-floor-diagonal-mini
+  sprite: /Textures/_Funkystation/Tiles/white_diagonal_mini.png
+  variants: 4
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemWhiteDiagonalMini
+#Funky end
 
 ### DARK
 - type: tile
   id: FloorDark
   parent: BaseStationTile
   name: tiles-dark-floor
-  sprite: /Textures/Tiles/Basic/Dark/dark.png
+  sprite: /Textures/_Funkystation/Tiles/dark.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
@@ -164,10 +263,12 @@
   id: FloorDarkMini
   parent: BaseStationTile
   name: tiles-dark-floor-mini
-  sprite: /Textures/Tiles/Basic/Dark/dark-mini.png
+  sprite: /Textures/_Funkystation/Tiles/dark_mini.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMini
+
 
 - type: tile
   parent: BaseStationTile
@@ -187,7 +288,8 @@
   id: FloorDarkPavement
   parent: BaseStationTile
   name: tiles-dark-floor-pavement
-  sprite: /Textures/Tiles/Basic/Dark/dark-pavement.png
+  sprite: /Textures/_Funkystation/Tiles/dark_pavement.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavement
@@ -196,7 +298,8 @@
   id: FloorDarkMono
   parent: BaseStationTile
   name: tiles-dark-floor-mono
-  sprite: /Textures/Tiles/Basic/Dark/dark-mono.png
+  sprite: /Textures/_Funkystation/Tiles/dark_mono.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMono
@@ -205,7 +308,8 @@
   id: FloorDarkPavementVertical
   parent: BaseStationTile
   name: tiles-dark-floor-pavement-vertical
-  sprite: /Textures/Tiles/Basic/Dark/dark-pavement-vertical.png
+  sprite: /Textures/_Funkystation/Tiles/dark_pavement_vertical.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavementVertical
@@ -214,7 +318,8 @@
   id: FloorDarkHerringbone
   parent: BaseStationTile
   name: tiles-dark-floor-herringbone
-  sprite: /Textures/Tiles/Basic/Dark/dark-herringbone.png
+  sprite: /Textures/_Funkystation/Tiles/dark_herringbone.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkHerringbone
@@ -223,7 +328,8 @@
   id: FloorDarkPlastic
   parent: BaseStationTile
   name: tiles-plastic-dark-floor
-  sprite: /Textures/Tiles/Basic/Dark/dark-plastic.png
+  sprite: /Textures/_Funkystation/Tiles/dark_plastic.png # Funky
+  variants: 4
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
@@ -236,3 +342,33 @@
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemTechmaintDark
+
+#Funky - More dark tiles
+- type: tile
+  id: FloorDarkDiagonal
+  parent: BaseStationTile
+  name: tiles-dark-floor-diagonal
+  sprite: /Textures/_Funkystation/Tiles/dark_diagonal.png # Funky
+  variants: 4
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemDarkDiagonal
+
+- type: tile
+  id: FloorDarkOffset
+  parent: BaseStationTile
+  name: tiles-dark-floor-offset
+  sprite: /Textures/_Funkystation/Tiles/dark_offset.png # Funky
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemDarkOffset
+
+- type: tile
+  id: FloorDarkDiagonalMini
+  parent: BaseStationTile
+  name: tiles-dark-floor-diagonal-mini
+  sprite: /Textures/_Funkystation/Tiles/dark_diagonal_mini.png # Funky
+  variants: 4
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemDarkDiagonalMini

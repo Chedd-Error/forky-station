@@ -781,9 +781,9 @@
   name: Toggle Visor
   description: Flips the helmet visor up or down.
   components:
-  - type: Action
-    icon:
-      sprite: Clothing/Head/Welding/welding.rsi
-      state: icon
+  - type: Sprite
+    sprite: Clothing/Head/Welding/welding.rsi
+    layers:
+    - state: icon
   - type: InstantAction
     event: !type:ToggleHelmetVisorEvent
