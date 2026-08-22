@@ -224,37 +224,6 @@
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
-  parent: BaseWall
-  id: WallDiamond
-  name: diamond wall
-  components:
-  - type: Sprite
-    sprite: Structures/Walls/diamond.rsi
-  - type: Icon
-    sprite: Structures/Walls/diamond.rsi
-  - type: RCDDeconstructable
-    cost: 60 # Funkystation
-    delay: 8
-    fx: EffectRCDDeconstruct8
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          Girder:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: IconSmooth
-    key: walls
-    base: diamond
-
-- type: entity
-  parent: [ BaseWall, StructureHealthWallWeak ]
   id: WallGold
   name: gold wall
   components:

@@ -31,9 +31,6 @@
       weight: 7
     - id: XenoArtifactFloraSpawn
       weight: 10
-    - id: XenoArtifactChemicalPuddle
-      weight: 10
-      weight: 1.0
     - id: XenoArtifactChemicalAluminiumPuddle #Funky changes start, splitting up the table for repeatability
       weight: 1
     - id: XenoArtifactChemicalCarbonPuddle

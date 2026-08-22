@@ -1,6 +1,6 @@
 - type: entity
   name: hardened roach
-  parent: SimpleMobBase
+  parent: MobMothroach
   id: ImmortalRoach
   description: With an extremely robust carapace this foul creature is considered neigh invulnerable. Spacing is recommended.
   components:
@@ -31,18 +31,7 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
-  - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: InsectBlood
-        Quantity: 20
-  - type: Hunger
-    baseDecayRate: 0.25
-  - type: MobState
   - type: MobThresholds
     thresholds:
       0: Alive
       10000000: Dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 0.7
-    baseSprintSpeed : 1
