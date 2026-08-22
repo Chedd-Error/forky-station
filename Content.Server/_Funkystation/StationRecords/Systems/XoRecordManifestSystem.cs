@@ -32,10 +32,10 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
 
         Subs.CVar(_cfg, XoRecordsCVars.ManualRecordsEnabled, OnCVarChanged, true);
 
-        SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
-        SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnRecordCreated);
-        SubscribeLocalEvent<RecordModifiedEvent>(OnRecordModified);
-        SubscribeLocalEvent<RecordRemovedEvent>(OnRecordRemoved);
+        //SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
+        //SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnRecordCreated);
+        //SubscribeLocalEvent<RecordModifiedEvent>(OnRecordModified);
+        //SubscribeLocalEvent<RecordRemovedEvent>(OnRecordRemoved);
     }
 
     private void OnCVarChanged(bool enabled)
