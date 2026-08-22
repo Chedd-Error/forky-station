@@ -64,6 +64,6 @@
     sprite: _Funkystation/Structures/Storage/closet.rsi # Funky
     state: genpop
   product: LockerPrisoner
-  cost: 250
+  cost: 300
   category: cargoproduct-category-name-security
   group: market
