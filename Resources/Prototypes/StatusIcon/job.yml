@@ -326,6 +326,14 @@
     state: Zookeeper
   jobName: job-name-zookeeper
 
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTramDriver
+  icon:
+    sprite: *icon-rsi
+    state: TramDriver
+  jobName: job-name-tramdriver
+
 # Entertainer (like service, but not actually service)
 
 - type: jobIcon
@@ -563,7 +571,6 @@
   icon:
     sprite: *icon-rsi
     state: Admin
-  allowSelection: false
 
 - type: jobIcon
   parent: JobIcon
@@ -571,7 +578,6 @@
   icon:
     sprite: *icon-rsi
     state: SeniorPhysician
-  allowSelection: false
 
 - type: jobIcon
   parent: JobIcon
@@ -579,7 +585,6 @@
   icon:
     sprite: *icon-rsi
     state: SeniorOfficer
-  allowSelection: false
 
 - type: jobIcon
   parent: JobIcon
@@ -587,7 +592,6 @@
   icon:
     sprite: *icon-rsi
     state: SeniorEngineer
-  allowSelection: false
 
 - type: jobIcon
   parent: JobIcon
@@ -595,7 +599,6 @@
   icon:
     sprite: *icon-rsi
     state: SeniorResearcher
-  allowSelection: false
 
 # Other
 
@@ -616,3 +619,11 @@
     state: Unknown
   jobName: job-name-unknown
   isCrewJob: false
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSus
+  icon:
+    sprite: *icon-rsi
+    state: Sus
+  jobName: job-name-sus
