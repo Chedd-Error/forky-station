@@ -1,6 +1,5 @@
 ﻿using System.Numerics;
 using Content.Server.Atmos.Components;
-using Content.Server.Forensics;
 using Content.Shared._Funkystation.WallStains;
 using Content.Shared._Funkystation.WallStains.Components;
 using Content.Shared.Chemistry;
@@ -12,6 +11,8 @@ using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
+using Content.Shared.Forensics.Components;
+using Content.Shared.Forensics.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
@@ -94,7 +95,7 @@ public sealed partial class WallStainSystem : EntitySystem
         foreach (var offset in checkOffsets)
         {
             var targetTile = tilePos + offset;
-            var anchored = _map.GetAnchoredEntitiesEnumerator(gridUid.Value, grid, targetTile);
+            var anchored = _map.GetAnchoredEntities(gridUid.Value, grid, targetTile);
             while (anchored.MoveNext(out var ent))
             {
                 if (!IsWall(ent.Value))

@@ -261,9 +261,9 @@ public sealed partial class TextScreenSystem : VisualizerSystem<TextScreenVisual
             {
                 var previousText = screen.TextToDraw;
                 screen.TextToDraw = new string?[] { timeString };
-                ResetText(uid, screen, sprite);
-                BuildTextLayers(uid, screen, sprite);
-                DrawLayers(uid, screen.LayerStatesToDraw, sprite);
+                ResetText((uid, screen, sprite));
+                BuildTextLayers((uid, screen, sprite));
+                DrawStaticLayers(uid, screen.LayerStatesToDraw);
                 screen.TextToDraw = previousText;
             }
         }
