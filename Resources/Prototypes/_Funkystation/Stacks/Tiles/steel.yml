@@ -15,9 +15,3 @@
   id: FloorTileSteelDiagonal
   name: stack-steel-diagonal-tile
   spawn: FloorTileItemSteelDiagonal
-
-- type: stack
-  parent: BaseTileStack
-  id: FloorTileSteelMono
-  name: stack-steel-mono-tile
-  spawn: FloorTileItemSteelMono

@@ -160,7 +160,7 @@
   suffix: DEBUG
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
   - type: EdgeTrim
     smoothKey: evildoor
     mode: NoSprite

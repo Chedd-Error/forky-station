@@ -26,10 +26,10 @@
   - type: Stainable
     clothingVisuals:
       head:
-      - sprite: _Funkystation/Effects/blood.rsi
+      - sprite: /Textures/_Funkystation/Effects/blood.rsi
         state: helmetblood
     iconVisuals:
-    - sprite: _Funkystation/Effects/blood.rsi
+    - sprite: /Textures/_Funkystation/Effects/blood.rsi
       state: helmetbloodicon
   - type: SolutionManager
     solutions:
@@ -214,10 +214,10 @@
   - type: Stainable
     clothingVisuals:
       head:
-      - sprite: _Funkystation/Effects/blood.rsi
+      - sprite: /Textures/_Funkystation/Effects/blood.rsi
         state: helmetblood
     iconVisuals:
-    - sprite: _Funkystation/Effects/blood.rsi
+    - sprite: /Textures/_Funkystation/Effects/blood.rsi
       state: helmetbloodicon
   - type: ESViewconeModifier # Funky
     angleModifier: -60
@@ -324,8 +324,8 @@
   - type: Stainable
     clothingVisuals:
       head:
-      - sprite: _Funkystation/Effects/blood.rsi
+      - sprite: /Textures/_Funkystation/Effects/blood.rsi
         state: helmetblood
     iconVisuals:
-    - sprite: _Funkystation/Effects/blood.rsi
+    - sprite: /Textures/_Funkystation/Effects/blood.rsi
       state: helmetbloodicon

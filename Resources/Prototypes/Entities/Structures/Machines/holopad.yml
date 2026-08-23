@@ -498,7 +498,7 @@
   suffix: Cargo Front
   components:
   - type: Label
-    currentLabel: holopad-logistics-front # funky
+    localizedLabel: holopad-logistics-front # funky
 
 - type: entity
   parent: Holopad
@@ -506,7 +506,7 @@
   suffix: Cargo Bay
   components:
   - type: Label
-    currentLabel: holopad-logistics-cargo-bay # funky
+    localizedLabel: holopad-logistics-cargo-bay # funky
 
 - type: entity
   parent: Holopad
@@ -522,7 +522,7 @@
   suffix: Cargo Breakroom
   components:
   - type: Label
-    currentLabel: holopad-logistics-breakroom # funky
+    localizedLabel: holopad-logistics-breakroom # funky
 
 - type: entity
   parent: Holopad
@@ -530,7 +530,7 @@
   suffix: Mailroom # funky
   components:
   - type: Label
-    currentLabel: holopad-logistics-mailroom # funky
+    localizedLabel: holopad-logistics-mailroom # funky
 
 # Engineering
 - type: entity
@@ -684,7 +684,7 @@
   suffix: Courtroom
   components:
   - type: Label
-    currentLabel: holopad-ia-courtroom # funky
+    localizedLabel: holopad-ia-courtroom # funky
 
 - type: entity
   parent: Holopad
@@ -692,7 +692,7 @@
   suffix: Lawyer
   components:
   - type: Label
-    currentLabel: holopad-civilian-lawyer # funky
+    localizedLabel: holopad-civilian-lawyer # funky
 
 - type: entity
   parent: Holopad
@@ -765,7 +765,7 @@
   suffix: Botany
   components:
   - type: Label
-    currentLabel: holopad-logistics-botany # funky
+    localizedLabel: holopad-logistics-botany # funky
 
 - type: entity
   parent: Holopad
@@ -797,7 +797,7 @@
   suffix: Newsroom
   components:
   - type: Label
-    currentLabel: holopad-civilian-newsroom # funky
+    localizedLabel: holopad-civilian-newsroom # funky
 
 - type: entity
   parent: Holopad
@@ -895,7 +895,7 @@
   suffix: ATS
   components:
   - type: Label
-    currentLabel: holopad-logistics-ats # funky
+    localizedLabel: holopad-logistics-ats # funky
 
 - type: entity
   parent: HolopadLongRange
@@ -919,7 +919,7 @@
   suffix: Cargo Shuttle
   components:
   - type: Label
-    currentLabel: holopad-logistics-cargo-shuttle
+    localizedLabel: holopad-logistics-cargo-shuttle
 
 - type: entity
   parent: HolopadLongRange
