@@ -51,7 +51,7 @@
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/engineering.rsi # Funky changes
+    sprite: Clothing/Head/Hardsuits/engineering.rsi # Funky changes
   - type: HandheldLight
     addPrefix: false
   - type: PointLight
@@ -123,7 +123,7 @@
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
+    sprite: Clothing/Head/Hardsuits/salvage.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -367,7 +367,7 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
+    sprite: Clothing/Head/Hardsuits/luxury.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000

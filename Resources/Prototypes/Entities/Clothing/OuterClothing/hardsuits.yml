@@ -45,9 +45,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/engineering.rsi # Funky change
+    sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi # Funky change
   - type: Clothing
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/engineering.rsi # Funky change
+    sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi # Funky change
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
@@ -134,9 +134,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/salvage.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/salvage.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -555,9 +555,9 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/luxury.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/luxury.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/luxury.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/luxury.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
