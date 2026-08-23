@@ -1,16 +1,17 @@
 # Chemicals
+# Funky, if it does not operate off of 20 tc budget constraints then it was changed for Funky
 
 - type: listing
   id: UplinkHypopen
   name: uplink-hypopen-name
   description: uplink-hypopen-desc
-  icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
+  icon: { sprite: /Textures/_Funkystation/Objects/Misc/pens.rsi, state: pen } # Funky
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 20
   cost:
-    Telecrystal: 6
+    Telecrystal: 30
   categories:
   - UplinkChemicals
 
@@ -22,9 +23,9 @@
   productEntity: HypoDartBox
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 5
   cost:
-    Telecrystal: 2
+    Telecrystal: 10
   categories:
   - UplinkChemicals
 
@@ -36,9 +37,9 @@
   productEntity: ChemicalSynthesisKit
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 15
   cost:
-    Telecrystal: 3
+    Telecrystal: 25
   categories:
   - UplinkChemicals
 
@@ -49,7 +50,7 @@
   icon: { sprite: /Textures/Structures/Wallmounts/signs.rsi, state: bio }
   productEntity: ClothingBackpackDuffelZombieBundle
   cost:
-    Telecrystal: 40
+    Telecrystal: 200
   categories:
   - UplinkChemicals
   conditions:
@@ -69,9 +70,9 @@
   productEntity: ChemistryBottleNocturine
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 25
   cost:
-    Telecrystal: 4
+    Telecrystal: 30
   categories:
   - UplinkChemicals
 
@@ -82,9 +83,9 @@
   productEntity: MedkitCombatFilled
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 5
   cost:
-    Telecrystal: 3
+    Telecrystal: 15
   categories:
   - UplinkChemicals
 
@@ -95,9 +96,9 @@
   productEntity: CombatMedipen
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 10
   cost:
-    Telecrystal: 3
+    Telecrystal: 20
   categories:
   - UplinkChemicals
 
@@ -108,9 +109,9 @@
   productEntity: Stimpack
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 15
   cost:
-    Telecrystal: 2
+    Telecrystal: 25
   categories:
   - UplinkChemicals
 
@@ -121,9 +122,9 @@
   productEntity: StimkitFilled
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 20
   cost:
-    Telecrystal: 5
+    Telecrystal: 40
   categories:
   - UplinkChemicals
 
@@ -133,7 +134,7 @@
   description: uplink-cigarettes-desc
   productEntity: CigPackSyndicate
   cost:
-    Telecrystal: 1
+    Telecrystal: 20
   categories:
   - UplinkChemicals
 
@@ -144,9 +145,9 @@
   productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 16
+    Telecrystal: 80
   cost:
-    Telecrystal: 24
+    Telecrystal: 120
   categories:
   - UplinkChemicals
   conditions:

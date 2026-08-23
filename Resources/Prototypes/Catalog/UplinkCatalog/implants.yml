@@ -1,4 +1,5 @@
 # Implants
+# Funky, if it does not operate off of 20 tc budget constraints then it was changed for Funky
 
 - type: listing
   id: UplinkStorageImplanter
@@ -8,9 +9,9 @@
   productEntity: StorageImplanter
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 20
   cost:
-    Telecrystal: 8
+    Telecrystal: 30
   categories:
     - UplinkImplants
   conditions:
@@ -27,9 +28,9 @@
   productEntity: FreedomImplanter
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 5
   cost:
-    Telecrystal: 2
+    Telecrystal: 15
   categories:
     - UplinkImplants
 
@@ -41,9 +42,9 @@
   productEntity: ScramImplanter
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 5
   cost:
-    Telecrystal: 2 # it's a gamble that may kill you easily so 1 TC per use.
+    Telecrystal: 10 # it's a gamble that may kill you easily so 1 TC per use.
   categories:
     - UplinkImplants
 
@@ -55,9 +56,9 @@
   productEntity: DnaScramblerImplanter
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 15
   cost:
-    Telecrystal: 3
+    Telecrystal: 25
   categories:
     - UplinkImplants
 
@@ -69,9 +70,9 @@
   productEntity: EmpImplanter
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 20
   cost:
-    Telecrystal: 2
+    Telecrystal: 30
   categories:
     - UplinkImplants
 
@@ -152,7 +153,7 @@
   icon: { sprite: /Textures/Objects/Devices/communication.rsi, state: old-radio }
   productEntity: UplinkImplanter
   cost:
-    Telecrystal: 1
+    Telecrystal: 20
   categories:
   - UplinkImplants
   conditions:
@@ -167,7 +168,7 @@
   description: uplink-deathrattle-implant-desc
   productEntity: BoxDeathRattleImplants
   cost:
-    Telecrystal: 4
+    Telecrystal: 5
   categories:
   - UplinkImplants
   conditions:
@@ -180,18 +181,18 @@
         components:
           - SurplusBundle
 
-- type: listing
-  id: UplinkFakeMindshield
-  name: uplink-fake-mindshield-name
-  description: uplink-fake-mindshield-desc
-  icon: { sprite: Interface/Actions/actions_fakemindshield.rsi, state: icon-on }
-  productEntity: FakeMindShieldImplanter
-  discountDownTo:
-    Telecrystal: 2
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkImplants
+#- type: listing # Funky - Removing mindshields
+#  id: UplinkFakeMindshield
+#  name: uplink-fake-mindshield-name
+#  description: uplink-fake-mindshield-desc
+#  icon: { sprite: Interface/Actions/actions_fakemindshield.rsi, state: icon-on }
+#  productEntity: FakeMindShieldImplanter
+#  discountDownTo:
+#    Telecrystal: 10
+#  cost:
+#    Telecrystal: 15
+#  categories:
+#  - UplinkImplants
 
 - type: listing
   id: UplinkVoiceMaskImplant
@@ -201,8 +202,8 @@
   productEntity: VoiceMaskImplanter
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 15
   cost:
-    Telecrystal: 2
+    Telecrystal: 20
   categories:
   - UplinkImplants

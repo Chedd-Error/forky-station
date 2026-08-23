@@ -1,4 +1,5 @@
 # Pointless
+# Funky, if it does not operate off of 20 tc budget constraints then it was changed for Funky
 
 - type: listing
   id: UplinkBarberScissors
@@ -6,7 +7,7 @@
   description: uplink-barber-scissors-desc
   productEntity: BarberScissors
   cost:
-    Telecrystal: 1
+    Telecrystal: 2
   categories:
   - UplinkPointless
 
@@ -20,15 +21,15 @@
   categories:
   - UplinkPointless
 
-- type: listing
-  id: UplinkClothingConductingGloves
-  name: uplink-clothing-conducting-gloves-name
-  description: uplink-clothing-conducting-gloves-desc
-  productEntity: ClothingHandsGlovesConducting
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkPointless
+#- type: listing
+#  id: UplinkClothingConductingGloves
+#  name: uplink-clothing-conducting-gloves-name
+#  description: uplink-clothing-conducting-gloves-desc
+#  productEntity: ClothingHandsGlovesConducting
+#  cost:
+#    Telecrystal: 5
+#  categories:
+#  - UplinkPointless
 
 - type: listing
   id: UplinkRevolverCapGun
@@ -36,7 +37,7 @@
   description: uplink-revolver-cap-gun-desc
   productEntity: RevolverCapGun
   cost:
-    Telecrystal: 1
+    Telecrystal: 5
   categories:
   - UplinkPointless
 
@@ -57,7 +58,7 @@
   description: uplink-cat-ears-desc
   productEntity: ClothingHeadHatCatEars
   cost:
-    Telecrystal: 26
+    Telecrystal: 100
   categories:
   - UplinkPointless
   conditions:
@@ -145,7 +146,7 @@
   description: uplink-balloon-desc
   productEntity: BalloonSyn
   cost:
-    Telecrystal: 20
+    Telecrystal: 60
   categories:
   - UplinkPointless
   conditions:

@@ -1,17 +1,5 @@
 # Disruption
-
-- type: listing
-  id: UplinkSingularityGrenade
-  name: uplink-singularity-grenade-name
-  description: uplink-singularity-grenade-desc
-  productEntity: SingularityGrenade
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-    - UplinkDisruption
+# Funky, if it does not operate off of 20 tc budget constraints then it was changed for Funky
 
 - type: listing
   id: UplinkAccessBreaker
@@ -20,9 +8,9 @@
   productEntity: AccessBreaker
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 20
   cost:
-    Telecrystal: 4
+    Telecrystal: 30
   categories:
   - UplinkDisruption
 
@@ -33,9 +21,9 @@
   productEntity: Emag
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 20
   cost:
-    Telecrystal: 5
+    Telecrystal: 30
   categories:
   - UplinkDisruption
 
@@ -46,9 +34,9 @@
   productEntity: RadioJammer
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 15
   cost:
-    Telecrystal: 3
+    Telecrystal: 25
   categories:
   - UplinkDisruption
 
@@ -59,9 +47,9 @@
   productEntity: BorgModuleSyndicateWeapon
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 15
   cost:
-    Telecrystal: 5
+    Telecrystal: 20
   categories:
   - UplinkDisruption
 
@@ -72,9 +60,9 @@
   productEntity: ToolboxElectricalTurretFilled
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 20
   cost:
-    Telecrystal: 4
+    Telecrystal: 30
   categories:
   - UplinkDisruption
   conditions:
@@ -91,11 +79,11 @@
   icon: { sprite: /Textures/Objects/Specific/Robotics/borgmodule.rsi, state: syndicateborgbomb }
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 10
   cost:
-    Telecrystal: 4
+    Telecrystal: 20
   categories:
-    - UplinkDisruption
+  - UplinkDisruption
 
 - type: listing
   id: UplinkSoapSyndie
@@ -103,7 +91,7 @@
   description: uplink-soap-desc
   productEntity: SoapSyndie
   cost:
-    Telecrystal: 1
+    Telecrystal: 5
   categories:
   - UplinkDisruption
 
@@ -114,7 +102,7 @@
   productEntity: SlipocalypseClusterSoap
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 1
+    Telecrystal: 15
   categories:
   - UplinkDisruption
 
@@ -127,7 +115,7 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 2
+    Telecrystal: 5
   categories:
   - UplinkDisruption
 
@@ -138,9 +126,9 @@
   productEntity: SyndicateJawsOfLife
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 10
   cost:
-    Telecrystal: 2
+    Telecrystal: 20
   categories:
   - UplinkDisruption
 
@@ -159,6 +147,19 @@
 #   - UplinkDisruption
 
 - type: listing
+  id: UplinkPowerSink
+  name: uplink-power-sink-name
+  description: uplink-power-sink-desc
+  productEntity: PowerSink
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkExplosives
+
+- type: listing
   id: UplinkSyndimovCircuitKit
   name: uplink-syndimov-law-name
   description: uplink-syndimov-law-desc
@@ -166,16 +167,16 @@
   productEntity: SyndimovCircuitKit
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 6
+    Telecrystal: 15
   cost:
-    Telecrystal: 8
+    Telecrystal: 20
   categories:
   - UplinkDisruption
   conditions:
   - !type:StoreWhitelistCondition
-     blacklist:
-       tags:
-       - NukeOpsUplink
+    blacklist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkAntimovCircuitBoard
@@ -184,9 +185,9 @@
   productEntity: AntimovCircuitBoard
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 20
+    Telecrystal: 60
   cost:
-    Telecrystal: 24
+    Telecrystal: 80
   categories:
   - UplinkDisruption
   conditions:
@@ -201,7 +202,7 @@
   description: uplink-surplus-bundle-desc
   productEntity: CrateSyndicateSurplusBundle
   cost:
-    Telecrystal: 20
+    Telecrystal: 100
   categories:
   - UplinkDisruption
   conditions:
@@ -220,7 +221,7 @@
   description: uplink-starter-kit-desc
   productEntity: ClothingBackpackDuffelSyndicateFilledStarterKit
   cost:
-    Telecrystal: 40
+    Telecrystal: 200
   categories:
   - UplinkDisruption
   conditions:
@@ -244,7 +245,7 @@
   cost:
     Telecrystal: 12
   categories:
-    - UplinkDisruption
+  - UplinkDisruption
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:
@@ -262,8 +263,8 @@
   productEntity: CameraBug
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 5
   cost:
-    Telecrystal: 2
+    Telecrystal: 10
   categories:
   - UplinkDisruption

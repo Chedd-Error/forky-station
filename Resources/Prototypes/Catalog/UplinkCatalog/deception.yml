@@ -1,4 +1,5 @@
 # Deception
+# Funky, if it does not operate off of 20 tc budget constraints then it was changed for Funky
 
 - type: listing
   id: UplinkSyndicateIDCard
@@ -6,7 +7,7 @@
   description: uplink-syndicate-id-card-desc
   productEntity: SyndicateIDCard
   cost:
-    Telecrystal: 1
+    Telecrystal: 5
   categories:
   - UplinkDeception
 
@@ -17,9 +18,9 @@
   productEntity: AgentIDCard
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 15
   cost:
-    Telecrystal: 3
+    Telecrystal: 30
   categories:
   - UplinkDeception
 
@@ -30,9 +31,9 @@
   productEntity: StealthBox
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
-  cost:
     Telecrystal: 5
+  cost:
+    Telecrystal: 20
   categories:
   - UplinkDeception
 
@@ -43,9 +44,9 @@
   productEntity: ChameleonProjector
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 10
   cost:
-    Telecrystal: 3
+    Telecrystal: 15
   categories:
   - UplinkDeception
 
@@ -57,9 +58,9 @@
   productEntity: BoxEncryptionKeySyndie # Two for the price of one
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 10
   cost:
-    Telecrystal: 2
+    Telecrystal: 15
   categories:
   - UplinkDeception
 
@@ -70,7 +71,7 @@
   icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: ai_label }
   productEntity: EncryptionKeyBinarySyndicate
   cost:
-    Telecrystal: 1
+    Telecrystal: 10
   categories:
   - UplinkDeception
 
@@ -80,7 +81,7 @@
   description: uplink-cyberpen-desc
   productEntity: CyberPen
   cost:
-    Telecrystal: 1
+    Telecrystal: 3
   categories:
   - UplinkDeception
 
@@ -101,11 +102,11 @@
   productEntity: BriefcaseSyndieLobbyingBundleFilled
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 20
   cost:
-    Telecrystal: 4
+    Telecrystal: 30
   categories:
-    - UplinkDeception
+  - UplinkDeception
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -124,9 +125,9 @@
   productEntity: SyndicateBombFake
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 20
   cost:
-    Telecrystal: 4
+    Telecrystal: 30
   categories:
   - UplinkDeception
   restockTime: 1800
@@ -143,9 +144,9 @@
   productEntity: SyndicateBombFake
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 20
   cost:
-    Telecrystal: 4
+    Telecrystal: 35
   categories:
   - UplinkDeception
   conditions:
@@ -160,7 +161,7 @@
   description: uplink-travel-camera-desc
   productEntity: TravelCamera
   cost:
-    Telecrystal: 1
+    Telecrystal: 5
   categories:
   - UplinkDeception
 
@@ -170,7 +171,7 @@
   description: uplink-smuggler-satchel-desc
   productEntity: ClothingBackpackSatchelSmugglerUnanchored
   cost:
-    Telecrystal: 1
+    Telecrystal: 5
   categories:
   - UplinkDeception
 

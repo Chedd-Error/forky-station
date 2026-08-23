@@ -8,9 +8,9 @@
   productEntity: BoxHoloparasite
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 8
+    Telecrystal: 35
   cost:
-    Telecrystal: 12
+    Telecrystal: 50
   categories:
   - UplinkAllies
   conditions:
@@ -27,9 +27,9 @@
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-urist }
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 7
+    Telecrystal: 25
   cost:
-    Telecrystal: 11
+    Telecrystal: 30
   categories:
   - UplinkAllies
   conditions:
@@ -61,7 +61,7 @@
   productEntity: ReinforcementRadioSyndicateCyborgAssault
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
   cost:
-    Telecrystal: 65
+    Telecrystal: 300
   categories:
     - UplinkAllies
   conditions:
@@ -78,9 +78,9 @@
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-ancestor }
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 15
   cost:
-    Telecrystal: 6
+    Telecrystal: 20
   categories:
   - UplinkAllies
   conditions:
@@ -97,9 +97,9 @@
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-ancestor }
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 15
   cost:
-    Telecrystal: 6
+    Telecrystal: 20
   categories:
   - UplinkAllies
   conditions:
@@ -114,7 +114,7 @@
   description: uplink-carp-dehydrated-desc
   productEntity: DehydratedSpaceCarp
   cost:
-    Telecrystal: 1
+    Telecrystal: 15
   categories:
   - UplinkAllies
   conditions:
@@ -131,9 +131,9 @@
   productEntity: ReinforcementRadioSyndicateSyndiCat
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 15 # Funky changed to 15 from 30
   cost:
-    Telecrystal: 6
+    Telecrystal: 30
   categories:
     - UplinkAllies
 
@@ -144,7 +144,7 @@
   icon: { sprite: /Textures/Objects/Fun/pai.rsi, state: syndicate-icon-pai-off }
   productEntity: SyndicatePersonalAI
   cost:
-    Telecrystal: 1
+    Telecrystal: 0
   categories:
     - UplinkAllies
   conditions:

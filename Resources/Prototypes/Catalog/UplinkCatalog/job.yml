@@ -1,4 +1,5 @@
 # Job
+# Funky, if it does not operate off of 20 tc budget constraints then it was changed for Funky
 
 - type: listing
   id: uplinkGatfruitSeeds
@@ -7,9 +8,9 @@
   productEntity: GatfruitSeeds
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 15
   cost:
-    Telecrystal: 6
+    Telecrystal: 40
   categories:
   - UplinkJob
   conditions:
@@ -24,9 +25,9 @@
   productEntity: HolyHandGrenade
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 14
+    Telecrystal: 60
   cost:
-    Telecrystal: 20
+    Telecrystal: 70
   categories:
   - UplinkJob
   conditions:
@@ -41,9 +42,9 @@
   productEntity: RevolverCapGunFake
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 15
   cost:
-    Telecrystal: 3
+    Telecrystal: 20
   categories:
   - UplinkJob
   conditions:
@@ -59,9 +60,9 @@
   productEntity: ClusterBananaPeel
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
-  cost:
     Telecrystal: 5
+  cost:
+    Telecrystal: 10 #let the honk flow through you
   categories:
   - UplinkJob
   conditions:
@@ -77,9 +78,9 @@
   productEntity: BoxHoloclown
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 6
+    Telecrystal: 40
   cost:
-    Telecrystal: 12
+    Telecrystal: 50
   categories:
   - UplinkJob
   conditions:
@@ -93,10 +94,10 @@
   description: uplink-hot-potato-desc
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 10
   productEntity: HotPotato
   cost:
-    Telecrystal: 4
+    Telecrystal: 20
   categories:
   - UplinkJob
   conditions:
@@ -114,9 +115,9 @@
   productEntity: WeaponPistolCHIMPUpgradeKit
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 5
   cost:
-    Telecrystal: 4
+    Telecrystal: 10
   categories:
   - UplinkJob
   conditions:
@@ -131,9 +132,9 @@
   productEntity: WetFloorSignMineExplosive
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 30
   cost:
-    Telecrystal: 5 # was 4, with my buff made it 5 to be closer to minibomb -panzer
+    Telecrystal: 40 # was 4, with my buff made it 5 to be closer to minibomb -panzer
   categories:
   - UplinkJob
   conditions:
@@ -152,10 +153,10 @@
   icon: { sprite:  Objects/Misc/monkeycube.rsi, state: box}
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 10
   productEntity: SyndicateSpongeBox
   cost:
-    Telecrystal: 4
+    Telecrystal: 20
   categories:
   - UplinkJob
   conditions:
@@ -173,9 +174,9 @@
   productEntity: CaneSheathFilled
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 15
   cost:
-    Telecrystal: 3
+    Telecrystal: 25
   categories:
   - UplinkJob
   conditions:
@@ -191,9 +192,9 @@
   productEntity: CombatBakeryKit
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 15
   cost:
-    Telecrystal: 4
+    Telecrystal: 20
   categories:
   - UplinkJob
   conditions:
@@ -210,9 +211,9 @@
   productEntity: ClothingBackpackDuffelAcolyteBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 10
   cost:
-    Telecrystal: 4
+    Telecrystal: 15
   categories:
   - UplinkJob
   conditions:
@@ -228,9 +229,9 @@
   productEntity: SawAdvanced
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 10
   cost:
-    Telecrystal: 2
+    Telecrystal: 15
   categories:
   - UplinkJob
   conditions:
@@ -245,9 +246,9 @@
   productEntity: WeaponSubMachineGunBriefcase
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 10
+    Telecrystal: 40
   cost:
-    Telecrystal: 14
+    Telecrystal: 50
   categories:
   - UplinkJob
   conditions:
