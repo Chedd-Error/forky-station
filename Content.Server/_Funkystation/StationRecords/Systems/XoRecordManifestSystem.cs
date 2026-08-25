@@ -32,10 +32,10 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
 
         Subs.CVar(_cfg, XoRecordsCVars.ManualRecordsEnabled, OnCVarChanged, true);
 
-        //SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
-        //SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnRecordCreated);
-        //SubscribeLocalEvent<RecordModifiedEvent>(OnRecordModified);
-        //SubscribeLocalEvent<RecordRemovedEvent>(OnRecordRemoved);
+        SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
+        SubscribeLocalEvent<XoRecordManifestComponent, GeneralRecordCreatedEvent>(OnRecordCreated);
+        SubscribeLocalEvent<XoRecordManifestComponent, RecordModifiedEvent>(OnRecordModified);
+        SubscribeLocalEvent<XoRecordManifestComponent, RecordRemovedEvent>(OnRecordRemoved);
     }
 
     private void OnCVarChanged(bool enabled)
@@ -79,7 +79,7 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
         }
     }
 
-    private void OnRecordCreated(GeneralRecordCreatedEvent ev)
+    private void OnRecordCreated(Entity<XoRecordManifestComponent> ent, ref GeneralRecordCreatedEvent ev)
     {
         var manifest = EnsureComp<XoRecordManifestComponent>(ev.Key.OriginStation);
 
@@ -90,7 +90,7 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
         RaiseLocalEvent(new XoRecordManifestUpdatedEvent(ev.Key.OriginStation));
     }
 
-    private void OnRecordModified(RecordModifiedEvent ev)
+    private void OnRecordModified(Entity<XoRecordManifestComponent> ent, ref RecordModifiedEvent ev)
     {
         if (_manualEnabled)
             return;
@@ -103,7 +103,7 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
         RaiseLocalEvent(new XoRecordManifestUpdatedEvent(ev.Key.OriginStation));
     }
 
-    private void OnRecordRemoved(RecordRemovedEvent ev)
+    private void OnRecordRemoved(Entity<XoRecordManifestComponent> ent, ref RecordRemovedEvent ev)
     {
         if (!TryComp<XoRecordManifestComponent>(ev.Station, out var manifest))
             return;
