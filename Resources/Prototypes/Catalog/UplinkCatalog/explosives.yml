@@ -182,8 +182,21 @@
   productEntity: GrenadeIncendiary
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 5
+    Telecrystal: 15 #funky change
   cost:
-    Telecrystal: 15
+    Telecrystal: 30 #funky change
+  categories:
+  - UplinkExplosives
+
+- type: listing
+  id: UplinkPowerSink
+  name: uplink-power-sink-name
+  description: uplink-power-sink-desc
+  productEntity: PowerSink
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 20
+  cost:
+    Telecrystal: 40
   categories:
   - UplinkExplosives
