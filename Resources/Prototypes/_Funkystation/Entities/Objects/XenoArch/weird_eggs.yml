@@ -132,6 +132,9 @@
   # all below are for egg cooking/exploding
   - type: AtmosExposed
   - type: Temperature
+    thermalConductivity: 1
+    temperature: 293.15
+    heatCapacity: 15000
   - type: TemperatureDamage
   - type: InternalTemperature
 
