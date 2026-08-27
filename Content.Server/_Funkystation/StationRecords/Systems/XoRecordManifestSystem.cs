@@ -31,6 +31,11 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
         base.Initialize();
 
         Subs.CVar(_cfg, XoRecordsCVars.ManualRecordsEnabled, OnCVarChanged, true);
+
+        //SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
+        //SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnRecordCreated);
+        //SubscribeLocalEvent<RecordModifiedEvent>(OnRecordModified);
+        //SubscribeLocalEvent<RecordRemovedEvent>(OnRecordRemoved);
     }
 
     private void OnCVarChanged(bool enabled)
@@ -54,8 +59,7 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
         }
     }
 
-    [SubscribeLocalEvent]
-    private void OnRunLevelChanged(Entity<XoRecordManifestComponent> ent, ref GameRunLevelChangedEvent ev)
+    private void OnRunLevelChanged(GameRunLevelChangedEvent ev)
     {
         if (ev.New != GameRunLevel.InRound)
             return;
@@ -75,34 +79,37 @@ public sealed partial class XoRecordManifestSystem : EntitySystem
         }
     }
 
-    [SubscribeLocalEvent]
-    private void OnRecordCreated(Entity<XoRecordManifestComponent> ent, ref GeneralRecordCreatedEvent ev)
+    private void OnRecordCreated(GeneralRecordCreatedEvent ev)
     {
+        var manifest = EnsureComp<XoRecordManifestComponent>(ev.Key.OriginStation);
+
         if (!_stationRecords.TryGetRecord<GeneralStationRecord>(ev.Key, out var record))
             return;
 
-        ent.Comp.Published[ev.Key.Id] = record with { };
+        manifest.Published[ev.Key.Id] = record with { };
         RaiseLocalEvent(new XoRecordManifestUpdatedEvent(ev.Key.OriginStation));
     }
 
-    [SubscribeLocalEvent]
-    private void OnRecordModified(Entity<XoRecordManifestComponent> ent, ref RecordModifiedEvent ev)
+    private void OnRecordModified(RecordModifiedEvent ev)
     {
         if (_manualEnabled)
             return;
 
-        if (!_stationRecords.TryGetRecord<GeneralStationRecord>(ev.Key, out var record))
+        if (!TryComp<XoRecordManifestComponent>(ev.Key.OriginStation, out var manifest) ||
+            !_stationRecords.TryGetRecord<GeneralStationRecord>(ev.Key, out var record))
             return;
 
-        ent.Comp.Published[ev.Key.Id] = record with { };
+        manifest.Published[ev.Key.Id] = record with { };
         RaiseLocalEvent(new XoRecordManifestUpdatedEvent(ev.Key.OriginStation));
     }
 
-    [SubscribeLocalEvent]
-    private void OnRecordRemoved(Entity<XoRecordManifestComponent> ent, ref RecordRemovedEvent ev)
+    private void OnRecordRemoved(RecordRemovedEvent ev)
     {
-        var changed = ent.Comp.Published.Remove(ev.Key.Id);
-        changed |= ent.Comp.Discrepancies.Remove(ev.Key.Id);
+        if (!TryComp<XoRecordManifestComponent>(ev.Station, out var manifest))
+            return;
+
+        var changed = manifest.Published.Remove(ev.Key.Id);
+        changed |= manifest.Discrepancies.Remove(ev.Key.Id);
 
         if (changed)
             RaiseLocalEvent(new XoRecordManifestUpdatedEvent(ev.Station));

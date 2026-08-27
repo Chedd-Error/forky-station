@@ -35,7 +35,17 @@ public sealed partial class PagerSystem : SharedPagerSystem
 
     private readonly HashSet<int> _assignedNumbers = new();
 
-    [SubscribeLocalEvent]
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        //SubscribeLocalEvent<PagerComponent, MapInitEvent>(OnMapInit);
+        //SubscribeLocalEvent<PagerComponent, PagerSendPageMessage>(OnSendPage);
+        //SubscribeLocalEvent<PagerComponent, BoundUIOpenedEvent>(OnBuiOpened);
+        //SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnGeneralRecordCreated);
+        //SubscribeLocalEvent<PagerComponent, GotEmaggedEvent>(OnEmagged);
+    }
+
     private void OnEmagged(Entity<PagerComponent> ent, ref GotEmaggedEvent args)
     {
         if (ent.Comp.Emagged)
@@ -46,8 +56,7 @@ public sealed partial class PagerSystem : SharedPagerSystem
         args.Handled = true;
     }
 
-    [SubscribeLocalEvent]
-    private void OnGeneralRecordCreated(Entity<PagerComponent> ent, ref GeneralRecordCreatedEvent args)
+    private void OnGeneralRecordCreated(GeneralRecordCreatedEvent args)
     {
         if (!_records.TryGetRecord<GeneralStationRecord>(args.Key, out var record))
             return;
@@ -82,7 +91,6 @@ public sealed partial class PagerSystem : SharedPagerSystem
         return null;
     }
 
-    [SubscribeLocalEvent]
     private void OnBuiOpened(Entity<PagerComponent> ent, ref BoundUIOpenedEvent args)
     {
         if (args.UiKey is PagerUiKey.Key)
@@ -95,7 +103,6 @@ public sealed partial class PagerSystem : SharedPagerSystem
         _ui.SetUiState(ent.Owner, PagerUiKey.Key, state);
     }
 
-    [SubscribeLocalEvent]
     private void OnMapInit(Entity<PagerComponent> ent, ref MapInitEvent args)
     {
         _deviceLink.EnsureSourcePorts(ent.Owner, "PagerSender");
@@ -135,7 +142,6 @@ public sealed partial class PagerSystem : SharedPagerSystem
         return number;
     }
 
-    [SubscribeLocalEvent]
     private void OnSendPage(Entity<PagerComponent> ent, ref PagerSendPageMessage args)
     {
         if (!IsValidNumber(args.TargetNumber))
