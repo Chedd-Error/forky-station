@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseStructureDynamic, BasePaperLabelableVisualized ]
+  parent: [ BaseStructureDynamic, BasePaperLabelableVisualized, StructureHealthContainerStrong ]
   id: FuBaseGasCanister
   name: gas canister
   description: A canister that can contain any type of gas. It can be attached to connector ports using a wrench.
@@ -63,27 +63,18 @@
     interfaces:
       enum.GasCanisterUiKey.Key:
         type: GasCanisterBoundUserInterface
+  - type: Damageable
+    damageModifierSet: PlasteelMod
   - type: Destructible
     thresholds:
-    - trigger:
+    - trigger: &DamageContainerStrong
         !type:DamageTrigger
-        damage: 300
+        damage: 140
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          FuBaseGasCanisterBroken:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: Inorganic
   - type: Physics
     bodyType: Dynamic
   - type: Fixtures
@@ -171,21 +162,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuBaseGasCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuGasCanister
@@ -205,21 +188,13 @@
       visible: false
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuStorageCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 # Filled canisters, contain 2769.36 moles each
 
@@ -248,21 +223,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuAirCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanister
@@ -288,21 +255,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuOxygenCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanister
@@ -329,23 +288,15 @@
       temperature: 72
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuLiquidOxygenCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
   - type: AccessReader
-  access: [["Atmospherics"]]
+    access: [["Atmospherics"]]
 
 - type: entity
   parent: FuBaseGasCanister
@@ -371,21 +322,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuNitrogenCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanister
@@ -412,23 +355,15 @@
       temperature: 72
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          FuLiquidNitrogenCanisterBroken:
+          FuLiquidCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
   - type: AccessReader
-  access: [["Atmospherics"]]
+    access: [["Atmospherics"]]
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -455,21 +390,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuCarbonDioxideCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -496,25 +423,17 @@
       temperature: 72
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          FuLiquidOxygenCanisterBroken:
+          FuLiquidCarbonDioxideCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
   - type: Lock
     locked: true
   - type: AccessReader
-  access: [["Atmospherics"]]
+    access: [["Atmospherics"]]
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -541,21 +460,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuPhoronCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -582,21 +493,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuTritiumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanister
@@ -622,21 +525,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuWaterVaporCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -663,21 +558,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuAmmoniaCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -704,21 +591,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuNitrousOxideCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -745,21 +624,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuFrezonCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 ## /tg/ gasses
 
@@ -787,21 +658,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuBZCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -828,21 +691,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuHealiumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -869,21 +724,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuNitriumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanister
@@ -901,29 +748,15 @@
     - state: integrity-unshaded-0
       map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
       visible: false
-  - type: GasCanister
-    air:
-      volume: 1500
-      moles:
-        Pluoxium: 2769.36 # pluoxium
-      temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuPluoxiumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -950,21 +783,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuHydrogenCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -991,21 +816,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuHyperNobliumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -1032,21 +849,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuProtoNitrateCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -1073,21 +882,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuZaukerCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -1114,21 +915,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuHalonCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -1155,21 +948,13 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuHeliumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 - type: entity
   parent: FuBaseGasCanisterLocked
@@ -1196,35 +981,29 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
+    - trigger: *DamageContainerStrong
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           FuAntiNobliumCanisterBroken:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:DumpCanisterBehavior
 
 # Broken Entities
 
 - type: entity
-  parent: BaseStructureDynamic
+  parent: [ BaseStructureDynamic, StructureHealthContainerWeak ]
   id: FuBaseGasCanisterBroken
   name: broken gas canister
   description: A broken gas canister no longer able to hold gas. Can be salvaged for high-quality materials.
   components:
+  - type: Damageable
+    damageModifierSet: PlasteelMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 60
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -1234,12 +1013,6 @@
           SheetPlasteel1:
             min: 1
             max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: Inorganic
   - type: InteractionOutline
   - type: Sprite
     sprite: _Funkystation/Structures/Storage/canister.rsi
@@ -1262,7 +1035,7 @@
         - MachineLayer
   - type: PhysicalComposition
     materialComposition:
-      Steel: 500
+      Plasteel: 200
   - type: StaticPrice
     price: 125
 
@@ -1586,7 +1359,7 @@
         weight: 7
       - id: FuHydrogenCanister
         weight: 4
-      - id: FuPlasmaCanister
+      - id: FuPhoronCanister
         weight: 4
       - id: FuNitrousOxideCanister
         weight: 3

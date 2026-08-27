@@ -1,10 +1,70 @@
+- type: cargoProduct
+  id: FuAtmosphericsAir
+  icon:
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-white
+  product: FuAirCanister
+  cost: 600
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: FuAtmosphericsOxygen
+  icon:
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-blue
+  product: FuOxygenCanister
+  cost: 600
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: FuAtmosphericsNitrogen
+  icon:
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-red
+  product: FuNitrogenCanister
+  cost: 500
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: FuAtmosphericsCarbonDioxide
+  icon:
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-black
+  product: FuCarbonDioxideCanister
+  cost: 670 # even though it's poisonous, it comes locked and only damages you slowly even with high amounts (tested)
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: FuAtmosphericsStorage
+  icon:
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-orange
+  product: FuStorageCanister
+  cost: 210 # No gases in it so it's cheaper
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: FuAtmosphericsPhoron
+  icon:
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-phoron
+  product: FuPhoronCanister
+  cost: 4200 # for reference, bagel's 3x1 roundstart plasma chamber contains ~16kmol for free, this is $4.2k for 2769 mol
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
 # Funky atmos - /tg/ gases
 - type: cargoProduct
-  id: AtmosphericsBZ
+  id: FuAtmosphericsBZ
   icon:
-    sprite: Structures/Storage/canister.rsi
-    state: purple
-  product: BZCanister
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    state: icon-bz
+  product: FuBZCanister
   cost: 6000
   category: cargoproduct-category-name-atmospherics
   group: market

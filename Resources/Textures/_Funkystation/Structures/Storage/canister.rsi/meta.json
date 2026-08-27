@@ -223,6 +223,27 @@
             "name": "icon-rainbow"
         },
         {
+            "name": "icon-black"
+        },
+        {
+            "name": "icon-blue"
+        },
+        {
+            "name": "icon-bz"
+        },
+        {
+            "name": "icon-orange"
+        },
+        {
+            "name": "icon-phoron"
+        },
+        {
+            "name": "icon-red"
+        },
+        {
+            "name": "icon-white"
+        },
+        {
             "name": "mask"
         }
     ]
