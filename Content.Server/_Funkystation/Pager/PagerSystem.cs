@@ -39,11 +39,11 @@ public sealed partial class PagerSystem : SharedPagerSystem
     {
         base.Initialize();
 
-        //SubscribeLocalEvent<PagerComponent, MapInitEvent>(OnMapInit);
-        //SubscribeLocalEvent<PagerComponent, PagerSendPageMessage>(OnSendPage);
-        //SubscribeLocalEvent<PagerComponent, BoundUIOpenedEvent>(OnBuiOpened);
-        //SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnGeneralRecordCreated);
-        //SubscribeLocalEvent<PagerComponent, GotEmaggedEvent>(OnEmagged);
+        SubscribeLocalEvent<PagerComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<PagerComponent, PagerSendPageMessage>(OnSendPage);
+        SubscribeLocalEvent<PagerComponent, BoundUIOpenedEvent>(OnBuiOpened);
+        SubscribeLocalEvent<GeneralRecordCreatedEvent>(OnGeneralRecordCreated);
+        SubscribeLocalEvent<PagerComponent, GotEmaggedEvent>(OnEmagged);
     }
 
     private void OnEmagged(Entity<PagerComponent> ent, ref GotEmaggedEvent args)
@@ -56,7 +56,7 @@ public sealed partial class PagerSystem : SharedPagerSystem
         args.Handled = true;
     }
 
-    private void OnGeneralRecordCreated(GeneralRecordCreatedEvent args)
+    private void OnGeneralRecordCreated(ref GeneralRecordCreatedEvent args)
     {
         if (!_records.TryGetRecord<GeneralStationRecord>(args.Key, out var record))
             return;

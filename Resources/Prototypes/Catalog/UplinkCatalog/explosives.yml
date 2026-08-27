@@ -182,9 +182,9 @@
   productEntity: GrenadeIncendiary
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 5
+    Telecrystal: 15 #funky change
   cost:
-    Telecrystal: 15
+    Telecrystal: 30 #funky change
   categories:
   - UplinkExplosives
 
