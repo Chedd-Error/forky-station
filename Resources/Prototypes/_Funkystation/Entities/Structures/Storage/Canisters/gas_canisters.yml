@@ -1,26 +1,802 @@
-# Funky atmos - /tg/ gases
 - type: entity
-  parent: GasCanister
-  id: BZCanister
+  abstract: true
+  parent: [ BaseStructureDynamic, BasePaperLabelableVisualized ]
+  id: FuBaseGasCanister
+  name: gas canister
+  description: A canister that can contain any type of gas. It can be attached to connector ports using a wrench.
+  components:
+  - type: Animateable
+  - type: InteractionOutline
+  - type: Transform
+  - type: Sprite
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    noRot: true
+    layers:
+    - state: base-gray
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+      visible: false
+    - state: mask
+      map: [ "enum.MaxPressureVisualLayers.Base" ]
+      visible: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.GasCanisterVisuals.TankInserted:
+        tankInserted:
+          False: { state: tank-connected, visible: false }
+          True: { state: tank-connected, visible: true }
+      enum.LockVisuals.Locked:
+        locked:
+          False: { state: locked-unshaded, visible: false }
+          True: { state: locked-unshaded, shader: "unshaded", visible: true }
+      enum.GasCanisterVisuals.PressureState:
+        pressureLight:
+          0: { state: valve-full, visible: false }
+          1: { state: valve-full, visible: false }
+          2: { state: valve-full, visible: true }
+          3: { state: valve-full, visible: true }
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.StorageVisuals.Open:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: false }
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper-white }
+          Bounty: { state: paper-bounty }
+          CaptainsPaper: { state: paper-captain }
+          Invoice: { state: paper-invoice }
+  - type: ActivatableUI
+    key: enum.GasCanisterUiKey.Key
+  - type: UIRequiresLock
+    userInterfaceKeys:
+    - enum.GasCanisterUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.GasCanisterUiKey.Key:
+        type: GasCanisterBoundUserInterface
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuBaseGasCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 190
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: AtmosDevice
+    requireAnchored: false
+    joinSystem: true
+  - type: ContainerContainer
+    containers:
+      tank_slot: !type:ContainerSlot {}
+      paper_label: !type:ContainerSlot
+  - type: NodeContainer
+    nodes:
+      port:
+        !type:PortablePipeNode
+        nodeGroupID: Pipe
+        rotationsEnabled: false
+        volume: 1
+  - type: GasPortable
+  - type: MaxPressureVisuals
+    integrityMask: mask
+  - type: GasCanister
+    maxIntegrity: 15 # 5 times stronger than a gas tank
+    integrity: 15
+    maxReleasePressure: 1013.25
+    safetyPressure: 10132.5 # High enough that liquid tanks don't burst immediately, with an extra 33% wiggle room to work with
+    overpressure: 20265 # Purposefully high because cans react really fucking fast, may need to redo this value if reactions change!
+    gasTankSlot:
+      name: comp-gas-canister-slot-name-gas-tank
+      ejectOnBreak: true
+      whitelist:
+        components:
+          - GasTank
+  - type: Explosive
+    explosionType: Minibomb # Mostly a pressure wave explosive so primarily blunt damage
+    maxIntensity: 100
+    tileBreakScale: 0.2 # Keeps the can from spacing all the hot gas it has now vented :). If this proves to be too much it can be removed.
+  - type: StaticPrice
+    price: 200
+  - type: AccessReader
+    access: [["Atmospherics"], ["Engineering"], ["Research"]]
+  - type: Lock
+    locked: false
+  - type: GuideHelp
+    guides:
+    - GasCanisters
+  - type: Paintable
+    group: FuCanisters
+
+- type: entity
+  abstract: true
+  parent: FuBaseGasCanister
+  id: FuBaseGasCanisterLocked
+  components:
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuGasCanister
+  name: gas canister
+  components:
+  - type: Sprite
+    layers:
+    - state: base-gray
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuBaseGasCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuStorageCanister
+  name: storage canister
+  components:
+  - type: Sprite
+    layers:
+    - state: base-orange
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuStorageCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+# Filled canisters, contain 2769.36 moles each
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuAirCanister
+  name: air canister
+  description: A canister that can contain any type of gas. This one is supposed to contain air mixture. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-white
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Oxygen: 581.56 # oxygen 21%
+        Nitrogen: 2187.79 # nitrogen 79%
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuAirCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuOxygenCanister
+  name: oxygen canister
+  description: A canister that can contain any type of gas. This one is supposed to contain oxygen. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-blue
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Oxygen: 2769.36 # oxygen
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuOxygenCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuLiquidOxygenCanister
+  name: liquid oxygen canister
+  description: A canister that can contain any type of gas. This one is supposed to contain liquid oxygen. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-blue
+    - state: warning-cryo
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Oxygen: 18710.71051 # oxygen
+      temperature: 72
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuLiquidOxygenCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: AccessReader
+  access: [["Atmospherics"]]
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuNitrogenCanister
+  name: nitrogen canister
+  description: A canister that can contain any type of gas. This one is supposed to contain nitrogen. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-red
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Nitrogen: 2769.36 # nitrogen
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuNitrogenCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuLiquidNitrogenCanister
+  name: liquid nitrogen canister
+  description: A canister that can contain any type of gas. This one is supposed to contain liquid nitrogen. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-red
+    - state: warning-cryo
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Nitrogen: 18710.71051 # nitrogen
+      temperature: 72
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuLiquidNitrogenCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: AccessReader
+  access: [["Atmospherics"]]
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuCarbonDioxideCanister
+  name: carbon dioxide canister
+  description: A canister that can contain any type of gas. This one is supposed to contain carbon dioxide. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-black
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        CarbonDioxide: 2769.36 # carbon dioxide
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuCarbonDioxideCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuLiquidCarbonDioxideCanister
+  name: liquid carbon dioxide canister
+  description: A canister that can contain any type of gas. This one is supposed to contain liquid carbon dioxide. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-black
+    - state: warning-cryo
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        CarbonDioxide: 18710.71051 # carbon dioxide
+      temperature: 72
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuLiquidOxygenCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+  - type: AccessReader
+  access: [["Atmospherics"]]
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuPhoronCanister
+  name: plasmatic phoron canister
+  description: A canister that can contain any type of gas. This one is supposed to contain plasmatic phoron. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-purple
+    - state: detail-stripes-black
+    - state: warning-fire
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Plasma: 2769.36 # plasmatic phoron
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuPhoronCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuTritiumCanister
+  name: tritium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain tritium. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-green
+    - state: detail-stripes-black
+    - state: warning-fire
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Tritium: 2769.36 # tritium
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuTritiumCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuWaterVaporCanister
+  name: water vapor canister
+  description: A canister that can contain any type of gas. This one is supposed to contain water vapor. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-black
+    - state: detail-ring-white
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        WaterVapor: 2769.36 # water vapor
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuWaterVaporCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuAmmoniaCanister
+  name: ammonia canister
+  description: A canister that can contain any type of gas. This one is supposed to contain ammonia. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-olive
+    - state: detail-ring-gold
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Ammonia: 2769.36 # ammonia
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuAmmoniaCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuNitrousOxideCanister
+  name: nitrous oxide canister
+  description: A canister that can contain any type of gas. This one is supposed to contain nitrous oxide. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-red
+    - state: detail-ring-white
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        NitrousOxide: 2769.36 # nitrous oxide
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuNitrousOxideCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuFrezonCanister
+  name: frezon canister
+  description: A canister that can contain any type of gas. This one is supposed to contain frezon. It can be attached to connector ports using a wrench.
+  components:
+  - type: Sprite
+    layers:
+    - state: base-lightblue
+    - state: detail-ring-white
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Frezon: 2769.36 # frezon
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FuFrezonCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+
+## /tg/ gasses
+
+- type: entity
+  parent: FuBaseGasCanisterLocked
+  id: FuBZCanister
   name: bz canister
+  description: A canister that can contain any type of gas. This one is supposed to contain BZ. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: purple
+    - state: base-mauve
+    - state: detail-ring-gold
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        BZ: 1871.71051 # BZ
+        BZ: 2769.36 # BZ
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -30,37 +806,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          BZCanisterBroken:
+          FuBZCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: HealiumCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuHealiumCanister
   name: healium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain healium. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: healium
+    - state: base-pink
+    - state: detail-ring-gold
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Healium: 1871.71051
+        Healium: 2769.36 # healium
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -70,37 +848,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          HealiumCanisterBroken:
+          FuHealiumCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: NitriumCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuNitriumCanister
   name: nitrium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain nitrium. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: brown
+    - state: base-yellow
+    - state: detail-stripes-white
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Nitrium: 1871.71051
+        Nitrium: 2769.36 # nitrium
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -110,37 +890,38 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          NitriumCanisterBroken:
+          FuNitriumCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: PluoxiumCanister
+  parent: FuBaseGasCanister
+  id: FuPluoxiumCanister
   name: pluoxium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain pluoxium. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: darkblue
+    - state: base-purple
+    - state: detail-ring-white
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Pluoxium: 1871.71051
+        Pluoxium: 2769.36 # pluoxium
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -150,37 +931,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          PluoxiumCanisterBroken:
+          FuPluoxiumCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: HydrogenCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuHydrogenCanister
   name: hydrogen canister
+  description: A canister that can contain any type of gas. This one is supposed to contain hydrogen. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: white
+    - state: base-lightblue
+    - state: detail-stripes-black
+    - state: warning-fire
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Hydrogen: 1871.71051
+        Hydrogen: 2769.36 # hydrogen
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -190,37 +973,38 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          HydrogenCanisterBroken:
+          FuHydrogenCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: HyperNobliumCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuHyperNobliumCanister
   name: hyper-noblium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain hyper-noblium. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: nob
+    - state: base-black
+    - state: detail-ring-white
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        HyperNoblium: 1871.71051
+        HyperNoblium: 2769.36 # hyper-noblium
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -230,37 +1014,38 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          HyperNobliumCanisterBroken:
+          FuHyperNobliumCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: ProtoNitrateCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuProtoNitrateCanister
   name: proto-nitrate canister
+  description: A canister that can contain any type of gas. This one is supposed to contain proto-nitrate. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: proto_nitrate
+    - state: base-teal
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        ProtoNitrate: 1871.71051
+        ProtoNitrate: 2769.36 # proto-nitrate
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -270,37 +1055,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          ProtoNitrateCanisterBroken:
+          FuProtoNitrateCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: ZaukerCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuZaukerCanister
   name: zauker canister
+  description: A canister that can contain any type of gas. This one is supposed to contain zauker. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: zauker
+    - state: base-teal
+    - state: detail-ring-black
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Zauker: 1871.71051
+        Zauker: 2769.36 # zauker
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -310,37 +1097,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          ZaukerCanisterBroken:
+          FuZaukerCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: HalonCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuHalonCanister
   name: halon canister
+  description: A canister that can contain any type of gas. This one is supposed to contain halon. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: halon
+    - state: base-black
+    - state: detail-ring-white
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Halon: 1871.71051
+        Halon: 2769.36 # halon
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -350,37 +1139,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          HalonCanisterBroken:
+          FuHalonCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: HeliumCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuHeliumCanister
   name: helium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain helium. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: helium
+    - state: base-black
+    - state: detail-ring-white
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        Helium: 1871.71051
+        Helium: 2769.36 # helium
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -390,37 +1181,39 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          HeliumCanisterBroken:
+          FuHeliumCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
 
 - type: entity
-  parent: GasCanister
-  id: AntiNobliumCanister
+  parent: FuBaseGasCanisterLocked
+  id: FuAntiNobliumCanister
   name: anti-noblium canister
+  description: A canister that can contain any type of gas. This one is supposed to contain anti-noblium. It can be attached to connector ports using a wrench.
   components:
   - type: Sprite
     layers:
-    - state: antinob
+    - state: base-black
+    - state: detail-stripes-red
+    - state: warning-basic
+    - state: fixtures
+    - state: paper-white
+      visible: false
+      map: [ "enum.PaperLabelVisuals.Layer" ]
+    - state: integrity-unshaded-0
+      map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
+      visible: false
   - type: GasCanister
     air:
-      volume: 1000
+      volume: 1500
       moles:
-        AntiNoblium: 1871.71051
+        AntiNoblium: 2769.36 # anti-noblium
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -430,99 +1223,418 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          AntiNobliumCanisterBroken:
+          FuAntiNobliumCanisterBroken:
             min: 1
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:DumpCanisterBehavior
-  - type: Lock
-    locked: true
+
+# Broken Entities
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: BZCanisterBroken
+  parent: BaseStructureDynamic
+  id: FuBaseGasCanisterBroken
+  name: broken gas canister
+  description: A broken gas canister no longer able to hold gas. Can be salvaged for high-quality materials.
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Funkystation/Structures/Storage/canister.rsi
+    noRot: true
+    layers:
+    - state: base-gray
+    - state: fixtures-broken
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+  - type: StaticPrice
+    price: 125
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuStorageCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: purple-1
+    layers:
+    - state: base-orange
+    - state: warning-basic
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: HealiumCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuAirCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: healium-1
+    layers:
+    - state: base-white
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: NitriumCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuOxygenCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: brown-1
+    layers:
+    - state: base-blue
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: PluoxiumCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuLiquidOxygenCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: darkblue-1
+    layers:
+    - state: base-blue
+    - state: warning-cryo
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: HydrogenCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuNitrogenCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-red
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: HyperNobliumCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuLiquidNitrogenCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-red
+    - state: warning-cryo
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: ProtoNitrateCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuCarbonDioxideCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-black
+    - state: warning-basic
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: ZaukerCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuLiquidCarbonDioxideCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-black
+    - state: warning-cryo
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: HalonCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuPhoronCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-purple
+    - state: detail-stripes-black
+    - state: warning-fire
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: HeliumCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuTritiumCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-green
+    - state: detail-stripes-black
+    - state: warning-fire
+    - state: fixtures-broken
 
 - type: entity
-  parent: GasCanisterBrokenBase
-  id: AntiNobliumCanisterBroken
+  parent: FuBaseGasCanisterBroken
+  id: FuWaterVaporCanisterBroken
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    state: white-1
+    layers:
+    - state: base-black
+    - state: detail-ring-white
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuAmmoniaCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-olive
+    - state: detail-ring-gold
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuNitrousOxideCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-red
+    - state: detail-ring-white
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuFrezonCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-lightblue
+    - state: detail-ring-white
+    - state: warning-cryo
+    - state: fixtures-broken
+
+## /tg/ gasses
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuBZCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-mauve
+    - state: detail-ring-gold
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuHealiumCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-pink
+    - state: detail-ring-gold
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuNitriumCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-yellow
+    - state: detail-stripes-white
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuPluoxiumCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-purple
+    - state: detail-ring-white
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuHydrogenCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-lightblue
+    - state: detail-stripes-black
+    - state: warning-fire
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuHyperNobliumCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-cyan
+    - state: detail-ring-gold
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuProtoNitrateCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-teal
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuZaukerCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-teal
+    - state: detail-ring-black
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuHalonCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-mauve
+    - state: detail-ring-black
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuHeliumCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-purple
+    - state: warning-basic
+    - state: fixtures-broken
+
+- type: entity
+  parent: FuBaseGasCanisterBroken
+  id: FuAntiNobliumCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: base-black
+    - state: detail-stripes-red
+    - state: warning-basic
+    - state: fixtures-broken
+
+# Debug + Mapping
+
+- type: entity
+  parent: FuBaseGasCanister
+  id: FuMaxCapCanister # As of writing canisters currently have about 9000 explosive intensity. 95% the total damage of a syndicate bomb but spread across a larger area.
+  categories: [ Debug ]
+  name: max cap in a can
+  suffix: Max Cap
+  components:
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Oxygen: 1400
+        Tritium: 700
+      temperature: 373.149
+
+- type: entityTable
+  id: FuRandomCanTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 100
+      children:
+      - id: FuGasCanister
+        weight: 5
+      - id: FuStorageCanister
+        weight: 5
+      - id: FuOxygenCanister
+        weight: 7
+      - id: FuNitrogenCanister
+        weight: 7
+      - id: FuHydrogenCanister
+        weight: 4
+      - id: FuPlasmaCanister
+        weight: 4
+      - id: FuNitrousOxideCanister
+        weight: 3
+      - id: FuAmmoniaCanister
+        weight: 3
+      - id: FuCarbonDioxideCanister
+        weight: 2
+      - id: FuTritiumCanister
+        weight: 2
+      - id: FuFrezonCanister
+        weight: 2
+      - id: FuBZCanister
+        weight: 1
+      - id: FuHalonCanister
+        weight: 1
+
+- type: entity
+  name: Random Canister Spawner
+  id: RandomCanisterSpawner
+  parent: MarkerBase
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Funkystation/Structures/Storage/canister.rsi
+      state: icon-rainbow
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:NestedSelector
+      tableId: FuRandomCanTable

@@ -4,6 +4,7 @@
   id: GasCanister
   name: gas canister
   description: A canister that can contain any type of gas. It can be attached to connector ports using a wrench.
+  suffix: DEPRECATED # Funky change, use FuGasCanister instead
   components:
   - type: Animateable
   - type: InteractionOutline
@@ -117,7 +118,6 @@
         volume: 1
   - type: GasPortable
   - type: MaxPressureVisuals
-    integrityMask: mask-grey
   - type: GasCanister
     maxIntegrity: 15 # 5 times stronger than a gas tank
     integrity: 15
@@ -698,58 +698,6 @@
       - !type:DumpCanisterBehavior
   - type: Lock
     locked: true
-
-# funky changes start
-- type: entityTable
-  id: RandomCanTable
-  table: !type:GroupSelector
-    children:
-    - !type:GroupSelector
-      weight: 100
-      children:
-      - id: StorageCanister
-        weight: 10
-      - id: OxygenCanister
-        weight: 7
-      - id: NitrogenCanister
-        weight: 7
-      - id: HydrogenCanister
-        weight: 4
-      - id: PlasmaCanister
-        weight: 4
-      - id: NitrousOxideCanister
-        weight: 3
-      - id: AmmoniaCanister
-        weight: 3
-      - id: CarbonDioxideCanister
-        weight: 2
-      - id: TritiumCanister
-        weight: 2
-      - id: FrezonCanister
-        weight: 2
-      - id: BZCanister
-        weight: 1
-      - id: HalonCanister
-        weight: 1
-
-- type: entity
-  name: Random Canister Spawner
-  id: RandomCanisterSpawner
-  parent: MarkerBase
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Sprite
-    layers:
-    - state: red
-    - sprite: Structures/Storage/canister.rsi
-      state: can-rainbow
-  - type: EntityTableSpawner
-    offset: 0
-    table: !type:NestedSelector
-      tableId: RandomCanTable
-# funky changes end
-
 
 - type: entity
   parent: GasCanister

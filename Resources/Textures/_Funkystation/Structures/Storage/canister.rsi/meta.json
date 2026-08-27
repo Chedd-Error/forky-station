@@ -1,0 +1,173 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "sproten by zergologist (Discord) for Funky Station, meant to be layered like this: base, detail, warning, integrity, fixtures, locked, tank, paper, valve.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base-gray",
+            "directions": 4
+        },
+        {
+            "name": "base-white",
+            "directions": 4
+        },
+        {
+            "name": "base-pink",
+            "directions": 4
+        },
+        {
+            "name": "base-red",
+            "directions": 4
+        },
+        {
+            "name": "base-orange",
+            "directions": 4
+        },
+        {
+            "name": "base-copper",
+            "directions": 4
+        },
+        {
+            "name": "base-yellow",
+            "directions": 4
+        },
+        {
+            "name": "base-olive",
+            "directions": 4
+        },
+        {
+            "name": "base-green",
+            "directions": 4
+        },
+        {
+            "name": "base-teal",
+            "directions": 4
+        },
+        {
+            "name": "base-cyan",
+            "directions": 4
+        },
+        {
+            "name": "base-lightblue",
+            "directions": 4
+        },
+        {
+            "name": "base-blue",
+            "directions": 4
+        },
+        {
+            "name": "base-purple",
+            "directions": 4
+        },
+        {
+            "name": "base-mauve",
+            "directions": 4
+        },
+        {
+            "name": "base-black",
+            "directions": 4
+        },
+        {
+            "name": "detail-ring-black",
+            "directions": 4
+        },
+        {
+            "name": "detail-ring-gold",
+            "directions": 4
+        },
+        {
+            "name": "detail-ring-white",
+            "directions": 4
+        },
+        {
+            "name": "detail-stripes-black",
+            "directions": 4
+        },
+        {
+            "name": "detail-stripes-red",
+            "directions": 4
+        },
+        {
+            "name": "detail-stripes-white",
+            "directions": 4
+        },
+        {
+            "name": "warning-basic",
+            "directions": 4
+        },
+        {
+            "name": "warning-cryo",
+            "directions": 4
+        },
+        {
+            "name": "warning-fire",
+            "directions": 4
+        },
+        {
+            "name": "integrity-unshaded-0",
+            "directions": 4
+        },
+        {
+            "name": "integrity-unshaded-1",
+            "directions": 4
+        },
+        {
+            "name": "integrity-unshaded-2",
+            "directions": 4
+        },
+        {
+            "name": "integrity-unshaded-3",
+            "directions": 4
+        },
+        {
+            "name": "integrity-unshaded-4",
+            "directions": 4
+        },
+        {
+            "name": "fixtures",
+            "directions": 4
+        },
+        {
+            "name": "fixtures-broken",
+            "directions": 4
+        },
+        {
+            "name": "locked-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "tank-connected",
+            "directions": 4
+        },
+        {
+            "name": "paper-white",
+            "directions": 4
+        },
+        {
+            "name": "paper-captain",
+            "directions": 4
+        },
+        {
+            "name": "paper-bounty",
+            "directions": 4
+        },
+        {
+            "name": "paper-invoice",
+            "directions": 4
+        },
+        {
+            "name": "valve-full",
+            "directions": 4
+        },
+        {
+            "name": "icon-rainbow"
+        },
+        {
+            "name": "mask"
+        }
+    ]
+}
