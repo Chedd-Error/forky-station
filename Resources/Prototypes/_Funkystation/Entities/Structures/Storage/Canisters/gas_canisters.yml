@@ -188,7 +188,7 @@
       - !type:DumpCanisterBehavior
 
 - type: entity
-  parent: FuBaseGasCanister
+  parent: FuGasCanister
   id: FuStorageCanister
   name: storage canister
   components:
@@ -203,10 +203,6 @@
     - state: integrity-unshaded-0
       map: [ "enum.MaxPressureVisualLayers.BaseUnshaded" ]
       visible: false
-  - type: GasCanister
-    air:
-      volume: 1500
-      temperature: 293.15
   - type: Destructible
     thresholds:
     - trigger:
@@ -528,7 +524,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-purple
+    - state: base-copper
     - state: detail-stripes-black
     - state: warning-fire
     - state: fixtures
@@ -739,6 +735,7 @@
     layers:
     - state: base-lightblue
     - state: detail-ring-white
+    - state: warning-cryo
     - state: fixtures
     - state: paper-white
       visible: false
@@ -988,8 +985,9 @@
   components:
   - type: Sprite
     layers:
-    - state: base-black
-    - state: detail-ring-white
+    - state: base-cyan
+    - state: detail-ring-gold
+    - state: warning-fire
     - state: fixtures
     - state: paper-white
       visible: false
@@ -1112,8 +1110,8 @@
   components:
   - type: Sprite
     layers:
-    - state: base-black
-    - state: detail-ring-white
+    - state: base-mauve
+    - state: detail-ring-black
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -1154,8 +1152,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-black
-    - state: detail-ring-white
+    - state: base-purple
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -1376,7 +1373,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-purple
+    - state: base-copper
     - state: detail-stripes-black
     - state: warning-fire
     - state: fixtures-broken

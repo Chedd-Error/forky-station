@@ -7,7 +7,7 @@
 - type: paintableGroupCategory
   id: Canisters
   groups:
-  - Canisters
+  - FuCanisters # funky change
 
 - type: paintableGroupCategory
   id: Crates

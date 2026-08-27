@@ -1,16 +1,20 @@
-## Funky atmos - /tg/ gases
-# Canisters
-spray-painter-style-canisters-bz = BZ
-spray-painter-style-canisters-healium = Healium
-spray-painter-style-canisters-nitrium = Nitrium
-spray-painter-style-canisters-pluoxium = Pluoxium
-spray-painter-style-canisters-hydrogen = Hydrogen
-spray-painter-style-canisters-hyper-noblium = Hyper-noblium
-spray-painter-style-canisters-proto-nitrate = Proto-nitrate
-spray-painter-style-canisters-zauker = Zauker
-spray-painter-style-canisters-halon = Halon
-spray-painter-style-canisters-helium = Helium
-spray-painter-style-canisters-anti-noblium = Anti-noblium
+# canisters, would prefer more developed paintable layering
+spray-painter-style-fucanisters-gray = Gray
+spray-painter-style-fucanisters-black = Black
+spray-painter-style-fucanisters-white = White
+spray-painter-style-fucanisters-pink = Pink
+spray-painter-style-fucanisters-red = Red
+spray-painter-style-fucanisters-orange = Orange
+spray-painter-style-fucanisters-copper = Copper
+spray-painter-style-fucanisters-yellow = Yellow
+spray-painter-style-fucanisters-olive = Olive
+spray-painter-style-fucanisters-green = Green
+spray-painter-style-fucanisters-teal = Teal
+spray-painter-style-fucanisters-cyan = Cyan
+spray-painter-style-fucanisters-lightblue = Light Blue
+spray-painter-style-fucanisters-blue = Blue
+spray-painter-style-fucanisters-purple = Purple
+spray-painter-style-fucanisters-mauve = Mauve
 
 # Categories
 spray-painter-tab-category-cardboard = Cardboard

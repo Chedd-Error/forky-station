@@ -1,28 +1,21 @@
 - type: paintableGroup
   cost: 2
-  id: FuCanisters
+  id: FuCanisters # More of a base color layer, would prefer layers that go base color under detail under warning under the rest of the sprite layers.
   defaultStyle: gray
   styles:
     gray: FuGasCanister
-    storage: FuStorageCanister
-    air: FuAirCanister
-    ammonia: FuAmmoniaCanister
-    carbon-dioxide: FuCarbonDioxideCanister
-    frezon: FuFrezonCanister
-    nitrogen: FuNitrogenCanister
-    nitrous-oxide: FuNitrousOxideCanister
-    oxygen: FuOxygenCanister
-    plasma: FuPlasmaCanister
-    tritium: FuTritiumCanister
-    water-vapor: FuWaterVaporCanister
-    bz: FuBZCanister
-    healium: FuHealiumCanister
-    nitrium: FuNitriumCanister
-    pluoxium: FuPluoxiumCanister
-    hydrogen: FuHydrogenCanister
-    hyper-noblium: FuHyperNobliumCanister
-    proto-nitrate: FuProtoNitrateCanister
-    zauker: FuZaukerCanister
-    halon: FuHalonCanister
-    helium: FuHeliumCanister
-    anti-noblium: FuAntiNobliumCanister
+    black: FuBlackCanister
+    white: FuWhiteCanister
+    pink: FuPinkCanister
+    red: FuRedCanister
+    orange: FuOrangeCanister
+    copper: FuCopperCanister
+    yellow: FuYellowCanister
+    olive: FuOliveCanister
+    green: FuGreenCanister
+    teal: FuTealCanister
+    cyan: FuCyanCanister
+    lightblue: FuLightBlueCanister
+    blue: FuBlueCanister
+    purple: FuPurpleCanister
+    mauve: FuMauveCanister
