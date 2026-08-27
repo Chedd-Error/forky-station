@@ -524,8 +524,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-copper
-    - state: detail-stripes-black
+    - state: canister-phoron
     - state: warning-fire
     - state: fixtures
     - state: paper-white
@@ -566,8 +565,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-green
-    - state: detail-stripes-black
+    - state: canister-tritium
     - state: warning-fire
     - state: fixtures
     - state: paper-white
@@ -608,8 +606,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-black
-    - state: detail-ring-white
+    - state: canister-watervapor
     - state: fixtures
     - state: paper-white
       visible: false
@@ -649,8 +646,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-olive
-    - state: detail-ring-gold
+    - state: canister-ammonia
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -691,8 +687,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-red
-    - state: detail-ring-white
+    - state: canister-nitrousoxide
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -733,8 +728,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-lightblue
-    - state: detail-ring-white
+    - state: canister-frezon
     - state: warning-cryo
     - state: fixtures
     - state: paper-white
@@ -777,8 +771,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-mauve
-    - state: detail-ring-gold
+    - state: canister-bz
     - state: fixtures
     - state: paper-white
       visible: false
@@ -818,8 +811,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-pink
-    - state: detail-ring-gold
+    - state: canister-healium
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -860,8 +852,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-yellow
-    - state: detail-stripes-white
+    - state: canister-nitrium
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -902,8 +893,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-purple
-    - state: detail-ring-white
+    - state: base-lightblue
     - state: fixtures
     - state: paper-white
       visible: false
@@ -943,8 +933,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-lightblue
-    - state: detail-stripes-black
+    - state: canister-hydrogen
     - state: warning-fire
     - state: fixtures
     - state: paper-white
@@ -985,8 +974,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-cyan
-    - state: detail-ring-gold
+    - state: canister-hypernoblium
     - state: warning-fire
     - state: fixtures
     - state: paper-white
@@ -1068,8 +1056,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-teal
-    - state: detail-ring-black
+    - state: canister-zauker
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -1110,8 +1097,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-mauve
-    - state: detail-ring-black
+    - state: canister-halon
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -1193,8 +1179,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-black
-    - state: detail-stripes-red
+    - state: canister-antinoblium
     - state: warning-basic
     - state: fixtures
     - state: paper-white
@@ -1482,8 +1467,7 @@
   components:
   - type: Sprite
     layers:
-    - state: base-purple
-    - state: detail-ring-white
+    - state: base-lightblue
     - state: fixtures-broken
 
 - type: entity
@@ -1541,7 +1525,7 @@
   - type: Sprite
     layers:
     - state: base-mauve
-    - state: detail-ring-black
+    - state: detail-stripes-white
     - state: warning-basic
     - state: fixtures-broken
 

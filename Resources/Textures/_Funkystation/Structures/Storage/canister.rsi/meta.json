@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "sproten by zergologist (Discord) for Funky Station, meant to be layered like this: base, detail, warning, integrity, fixtures, locked, tank, paper, valve.",
+    "copyright": "sproten by zergologist (Discord) for Funky Station.",
     "size": {
         "x": 32,
         "y": 32
@@ -105,6 +105,62 @@
         },
         {
             "name": "warning-fire",
+            "directions": 4
+        },
+        {
+            "name": "canister-ammonia",
+            "directions": 4
+        },
+        {
+            "name": "canister-antinoblium",
+            "directions": 4
+        },
+        {
+            "name": "canister-bz",
+            "directions": 4
+        },
+        {
+            "name": "canister-frezon",
+            "directions": 4
+        },
+        {
+            "name": "canister-halon",
+            "directions": 4
+        },
+        {
+            "name": "canister-healium",
+            "directions": 4
+        },
+        {
+            "name": "canister-hydrogen",
+            "directions": 4
+        },
+        {
+            "name": "canister-hypernoblium",
+            "directions": 4
+        },
+        {
+            "name": "canister-nitrium",
+            "directions": 4
+        },
+        {
+            "name": "canister-nitrousoxide",
+            "directions": 4
+        },
+        {
+            "name": "canister-phoron",
+            "directions": 4
+        },
+        {
+            "name": "canister-tritium",
+            "directions": 4
+        },
+        {
+            "name": "canister-watervapor",
+            "directions": 4
+        },
+        {
+            "name": "canister-zauker",
             "directions": 4
         },
         {

@@ -1,20 +1,27 @@
 # canisters, would prefer more developed paintable layering
 spray-painter-style-fucanisters-gray = Gray
-spray-painter-style-fucanisters-black = Black
-spray-painter-style-fucanisters-white = White
-spray-painter-style-fucanisters-pink = Pink
-spray-painter-style-fucanisters-red = Red
-spray-painter-style-fucanisters-orange = Orange
-spray-painter-style-fucanisters-copper = Copper
-spray-painter-style-fucanisters-yellow = Yellow
-spray-painter-style-fucanisters-olive = Olive
-spray-painter-style-fucanisters-green = Green
-spray-painter-style-fucanisters-teal = Teal
-spray-painter-style-fucanisters-cyan = Cyan
-spray-painter-style-fucanisters-lightblue = Light Blue
-spray-painter-style-fucanisters-blue = Blue
-spray-painter-style-fucanisters-purple = Purple
-spray-painter-style-fucanisters-mauve = Mauve
+spray-painter-style-fucanisters-storage = Storage
+spray-painter-style-fucanisters-air = Air
+spray-painter-style-fucanisters-ammonia = Ammonia
+spray-painter-style-fucanisters-carbon-dioxide = Carbon dioxide
+spray-painter-style-fucanisters-frezon = Frezon
+spray-painter-style-fucanisters-nitrogen = Nitrogen
+spray-painter-style-fucanisters-nitrous-oxide = Nitrous oxide
+spray-painter-style-fucanisters-oxygen = Oxygen
+spray-painter-style-fucanisters-phoron = Phoron
+spray-painter-style-fucanisters-tritium = Tritium
+spray-painter-style-fucanisters-water-vapor = Water vapor
+spray-painter-style-fucanisters-bz = BZ
+spray-painter-style-fucanisters-healium = Healium
+spray-painter-style-fucanisters-nitrium = nitrium
+spray-painter-style-fucanisters-pluoxium = Pluoxium
+spray-painter-style-fucanisters-hydrogen = Hydrogen
+spray-painter-style-fucanisters-hyper-noblium = Hyper-noblium
+spray-painter-style-fucanisters-proto-nitrate = Proto-nitrate
+spray-painter-style-fucanisters-zauker = zauker
+spray-painter-style-fucanisters-halon = Halon
+spray-painter-style-fucanisters-helium = Helium
+spray-painter-style-fucanisters-anti-noblium = Anti-noblium
 
 # Categories
 spray-painter-tab-category-cardboard = Cardboard
