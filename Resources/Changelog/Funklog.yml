@@ -114,4 +114,13 @@
   id: 14
   time: '2026-08-27T23:46:05Z'
   url: https://github.com/funky-station/forky-station/pull/377
+- author: AraiMaia
+  changes:
+  - message: added the roundstart Prisoner role.
+    type: Add
+  - message: added a Prisoner Mining Hardsuit, with an integrated plastic explosive.
+    type: Add
+  id: 15
+  time: '2026-08-27T23:49:23Z'
+  url: https://github.com/funky-station/forky-station/pull/336
 Order: -1
