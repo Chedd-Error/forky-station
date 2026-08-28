@@ -131,4 +131,14 @@
   id: 16
   time: '2026-08-28T00:17:27Z'
   url: https://github.com/funky-station/forky-station/pull/316
+- author: AraiMaia
+  changes:
+  - message: Signatures and form fills now use a handwriting font, defined by a character
+      trait.
+    type: Add
+  - message: Signatures no longer sign your job, only your name.
+    type: Tweak
+  id: 17
+  time: '2026-08-28T01:08:12Z'
+  url: https://github.com/funky-station/forky-station/pull/320
 Order: -1
