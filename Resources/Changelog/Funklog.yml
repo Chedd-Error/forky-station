@@ -141,4 +141,11 @@
   id: 17
   time: '2026-08-28T01:08:12Z'
   url: https://github.com/funky-station/forky-station/pull/320
+- author: AraiMaia
+  changes:
+  - message: Added two accessibility options pertaining to viewcones.
+    type: Add
+  id: 18
+  time: '2026-08-28T01:11:19Z'
+  url: https://github.com/funky-station/forky-station/pull/331
 Order: -1
