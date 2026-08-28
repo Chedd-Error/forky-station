@@ -123,4 +123,12 @@
   id: 15
   time: '2026-08-27T23:49:23Z'
   url: https://github.com/funky-station/forky-station/pull/336
+- author: 8tv
+  changes:
+  - message: Adjusted Packed station for feedback and maintenance. Enjoy a new medical,
+      supermatter setup, and further expanded maintenance.
+    type: Tweak
+  id: 16
+  time: '2026-08-28T00:17:27Z'
+  url: https://github.com/funky-station/forky-station/pull/316
 Order: -1
