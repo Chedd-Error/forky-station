@@ -6,6 +6,7 @@ using Content.Shared.Popups;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Muting;
 using Content.Shared._Funkystation.Traits.Assorted;
+using Content.Shared.StatusEffectNew;
 using NetCord;
 using Robust.Shared.Random;
 
@@ -17,6 +18,7 @@ public sealed partial class HayFeverSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private ChatSystem _chatSystem = default!;
     [Dependency] private MobStateSystem _mobstateSystem = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private IRobustRandom _random = default!;
     private const float UpdateInterval = 1f;
     private float _updateTimer;
@@ -55,8 +57,6 @@ public sealed partial class HayFeverSystem : EntitySystem
                 allergy.TimeSinceReaction += UpdateInterval;
                 AllergicReaction(uid, allergy);
                 Sneeze(uid, allergy);
-
-
             }
         }
 
@@ -97,10 +97,6 @@ public sealed partial class HayFeverSystem : EntitySystem
         allergy.TimeSinceReaction = 0f;
         allergy.NextReactionTime = allergy.ReactionInterval;
         allergy.NextSneezeTime = allergy.TimeSinceReaction;
-
-
-
-
     }
     /// <summary>
     /// If enough time has passed since a sneeze was queued, and at least one sneeze is queued, sneezes once and subtracts 1 from the number of sneezes queued.
@@ -111,8 +107,8 @@ public sealed partial class HayFeverSystem : EntitySystem
     {
         if (allergy.TimeSinceReaction <= allergy.NextSneezeTime || allergy.SneezesQueued < 1)
             return;
-        if (TryComp<SpeechComponent>(uid,out _) && !TryComp<MutedComponent>(uid, out _))
-            _chatSystem.TryEmoteWithChat(uid,"Sneeze");
-            allergy.SneezesQueued -= 1;
+        if (TryComp<SpeechComponent>(uid, out _) && !_statusEffects.HasEffectComp<MutedStatusEffectComponent>(uid))
+            _chatSystem.TryEmoteWithChat(uid, "Sneeze");
+        allergy.SneezesQueued -= 1;
     }
 }
