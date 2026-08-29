@@ -171,4 +171,12 @@
   id: 21
   time: '2026-08-28T05:57:05Z'
   url: https://github.com/funky-station/forky-station/pull/325
+- author: Scissors
+  changes:
+  - message: made critical state weaken breathing instead of completely preventing
+      it
+    type: Tweak
+  id: 22
+  time: '2026-08-29T08:59:39Z'
+  url: https://github.com/funky-station/forky-station/pull/115
 Order: -1
