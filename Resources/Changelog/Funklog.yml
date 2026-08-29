@@ -193,4 +193,12 @@
   id: 24
   time: '2026-08-29T19:36:31Z'
   url: https://github.com/funky-station/forky-station/pull/61
+- author: battlecruiser12
+  changes:
+  - message: Added the Hay Fever trait, which periodically causes itchy nose, eyes,
+      and sneezing.
+    type: Add
+  id: 25
+  time: '2026-08-29T19:39:04Z'
+  url: https://github.com/funky-station/forky-station/pull/266
 Order: -1
