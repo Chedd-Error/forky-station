@@ -216,4 +216,17 @@
   id: 27
   time: '2026-08-30T00:44:01Z'
   url: https://github.com/funky-station/forky-station/pull/305
+- author: 8tv
+  changes:
+  - message: Added the Prisoner role to Packed
+    type: Add
+  - message: Added a prisoner mining dock to Packed
+    type: Add
+  - message: Added a mailroom to Packed
+    type: Add
+  - message: Removed the salvage docking bay in Packed
+    type: Remove
+  id: 28
+  time: '2026-08-30T02:04:44Z'
+  url: https://github.com/funky-station/forky-station/pull/385
 Order: -1
