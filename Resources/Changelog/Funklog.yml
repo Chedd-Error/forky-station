@@ -208,4 +208,12 @@
   id: 26
   time: '2026-08-29T23:42:06Z'
   url: https://github.com/funky-station/forky-station/pull/362
+- author: pepsimint
+  changes:
+  - message: Updated the hand sprite which appears when interacting with things. Credits
+      to @s_qn for the sprite.
+    type: Add
+  id: 27
+  time: '2026-08-30T00:44:01Z'
+  url: https://github.com/funky-station/forky-station/pull/305
 Order: -1
