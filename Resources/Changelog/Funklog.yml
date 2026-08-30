@@ -229,4 +229,11 @@
   id: 28
   time: '2026-08-30T02:04:44Z'
   url: https://github.com/funky-station/forky-station/pull/385
+- author: Tea
+  changes:
+  - message: plating tiles have new sprites
+    type: Tweak
+  id: 29
+  time: '2026-08-30T16:36:31Z'
+  url: https://github.com/funky-station/forky-station/pull/391
 Order: -1
