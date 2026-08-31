@@ -252,4 +252,11 @@
   id: 31
   time: '2026-08-31T01:19:36Z'
   url: https://github.com/funky-station/forky-station/pull/221
+- author: Idem778
+  changes:
+  - message: Added three new lobby arts
+    type: Add
+  id: 32
+  time: '2026-08-31T05:30:38Z'
+  url: https://github.com/funky-station/forky-station/pull/386
 Order: -1
