@@ -259,4 +259,12 @@
   id: 32
   time: '2026-08-31T05:30:38Z'
   url: https://github.com/funky-station/forky-station/pull/386
+- author: taydeo
+  changes:
+  - message: There are now special cabinets that spawn appropriate NDAs for command
+      and security employees.
+    type: Add
+  id: 33
+  time: '2026-08-31T07:28:30Z'
+  url: https://github.com/funky-station/forky-station/pull/402
 Order: -1
