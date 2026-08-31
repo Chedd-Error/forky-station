@@ -267,4 +267,11 @@
   id: 33
   time: '2026-08-31T07:28:30Z'
   url: https://github.com/funky-station/forky-station/pull/402
+- author: Dusty_Plant
+  changes:
+  - message: Added Bramble station and its shuttle to the maps folder
+    type: Add
+  id: 34
+  time: '2026-08-31T14:42:19Z'
+  url: https://github.com/funky-station/forky-station/pull/395
 Order: -1
