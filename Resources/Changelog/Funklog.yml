@@ -236,4 +236,11 @@
   id: 29
   time: '2026-08-30T16:36:31Z'
   url: https://github.com/funky-station/forky-station/pull/391
+- author: battlecruiser12
+  changes:
+  - message: Ported the Disposal and Mailing Units resprite.
+    type: Add
+  id: 30
+  time: '2026-08-31T01:15:27Z'
+  url: https://github.com/funky-station/forky-station/pull/300
 Order: -1
