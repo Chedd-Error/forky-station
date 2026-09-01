@@ -281,4 +281,22 @@
   id: 35
   time: '2026-08-31T14:42:28Z'
   url: https://github.com/funky-station/forky-station/pull/390
+- author: Sere
+  changes:
+  - message: RMC's pump action and breechloaded/break-action systems
+    type: Add
+  - message: New sprites for mosin, double-barrelled and sawn-off by Dogman
+    type: Add
+  - message: Marked original wizden prototypes for China-Lake, Mosin, Double-barreled,
+      sawn-off and Kammerer as Deprecated
+    type: Tweak
+  - message: Duplicate entities for the above in _Funkystation namespace.
+    type: Add
+  - message: Bug in breechloading that caused ammo to be deleted if breech was closed
+    type: Fix
+  - message: Edit migration.yml to reflect new prototypes
+    type: Tweak
+  id: 36
+  time: '2026-09-01T03:59:02Z'
+  url: https://github.com/funky-station/forky-station/pull/206
 Order: -1
