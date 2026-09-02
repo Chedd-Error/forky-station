@@ -331,4 +331,19 @@
   id: 40
   time: '2026-09-02T05:03:29Z'
   url: https://github.com/funky-station/forky-station/pull/355
+- author: mycobiota
+  changes:
+  - message: Port encryption key resprites by Catazeus
+    type: Add
+  - message: Port department handheld radios by willowzeta and vectorassembly
+    type: Add
+  - message: Port the emergency radio channel, reserved for emergency handhelds, the
+      warden, and paramedics, by willowzeta
+    type: Add
+  - message: The new departmental and emergency radios are now part of various inventories,
+      such as the lockers of department heads
+    type: Add
+  id: 41
+  time: '2026-09-02T05:19:49Z'
+  url: https://github.com/funky-station/forky-station/pull/262
 Order: -1
