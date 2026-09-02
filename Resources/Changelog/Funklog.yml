@@ -346,4 +346,32 @@
   id: 41
   time: '2026-09-02T05:19:49Z'
   url: https://github.com/funky-station/forky-station/pull/262
+- author: Miguel4387
+  changes:
+  - message: Added the ninja pager which can be used to extract if you're far away
+      from the station and have done all your objectives
+    type: Add
+  - message: Ninja beggining the comms or criminal records hack notifies security
+      on the radio
+    type: Tweak
+  - message: RD server notifies sci upon research being stolen
+    type: Tweak
+  - message: Spider Charge can be defused, has a much longer countdown and larger
+      explosion
+    type: Tweak
+  - message: Ninja spawns with voice changer implant
+    type: Tweak
+  - message: Ninja throwing stars have nocturine but are unable to inject people with
+      >=30% piercing armor
+    type: Tweak
+  - message: Replaced survive objective with "survive and extract" as well as adding
+      a method for the ninja to return to the clan
+    type: Tweak
+  - message: Edited ninja guidebook entry
+    type: Tweak
+  - message: ninja door emag glove functionality and objective
+    type: Remove
+  id: 42
+  time: '2026-09-02T05:22:11Z'
+  url: https://github.com/funky-station/forky-station/pull/258
 Order: -1
