@@ -322,4 +322,13 @@
   id: 39
   time: '2026-09-02T01:11:33Z'
   url: https://github.com/funky-station/forky-station/pull/404
+- author: pirakaplant
+  changes:
+  - message: Captain's time requirements are now a consistent five hours on each department
+      (except for IA, which is 10h, and Command, which is still 20h). Removed the
+      40 hour overall requirement as it is redundant.
+    type: Tweak
+  id: 40
+  time: '2026-09-02T05:03:29Z'
+  url: https://github.com/funky-station/forky-station/pull/355
 Order: -1
